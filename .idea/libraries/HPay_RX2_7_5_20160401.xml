@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="HPay_RX2.7.5_20160401">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/lib_anzhi/libs/HPay_RX2.7.5_20160401.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

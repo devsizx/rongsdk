@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="anzhipayjar">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/lib_anzhi/libs/anzhipayjar.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

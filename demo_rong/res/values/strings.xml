@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">融合SDK(mzw)</string>
+    <string name="login">登录</string>
+    <string name="login_out">登出</string>
+    <string name="logbtn">日志测试</string>
+    <string name="update_auto">自动更新</string>
+    <string name="payhint">请输入支付金额</string>
+    <string name="pay">支付</string>
+    <string name="stapay">激励视频</string>
+    <string name="gift">礼包回调</string>
+    <string name="subgameinfo">提交游戏信息</string>
+    <string name="exitgame">退出游戏</string>
+</resources>

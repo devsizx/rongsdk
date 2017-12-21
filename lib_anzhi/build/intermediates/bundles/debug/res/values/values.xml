@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:ns1="urn:oasis:names:tc:xliff:document:1.2">
+    <color name="hpay_bg_color">#FBF6F2</color>
+    <color name="hpay_cancel_wz_color">#737065</color>
+    <color name="hpay_edit_color">#D7CEC5</color>
+    <color name="hpay_getyzm_bg_color">#ECE5DF</color>
+    <color name="hpay_line_color">#E6DED7</color>
+    <color name="hpay_ok_wz_color">#007AFF</color>
+    <color name="hpay_title_color">#737065</color>
+    <color name="hpay_wxts_color">#B7B3AB</color>
+    <string name="azuc_find_new_version">检测到新版本</string>
+    <string name="azuc_find_new_version_game">[<ns1:g id="FILE">%s</ns1:g>]-发新版啦</string>
+    <string name="azuc_updata_content">安智用户中心有版本可以更新了，大小为<ns1:g id="FILE">%s</ns1:g>，请下载更新</string>
+    <style name="anzhi_sdk_style" parent="android:Theme.Dialog">
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowNoTitle">false</item>
+        <item name="android:windowBackground">@null</item>
+        <item name="android:windowIsFloating">false</item>
+        <item name="android:background">@null</item>
+        <item name="android:colorBackgroundCacheHint">@null</item>
+    </style>
+    <style name="hpay_custom_confim_dialog" parent="@android:style/Theme.Dialog">
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:backgroundDimEnabled">true</item>
+        <item name="android:backgroundDimAmount">0.6</item>
+    </style>
+    <style name="hpay_dialog_style" parent="@android:style/Theme.Dialog">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowIsTranslucent">true</item>
+    </style>
+    <style name="hpay_progress_dialog" parent="android:style/Theme.Dialog">
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:background">#00000000</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:colorBackgroundCacheHint">@null</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:backgroundDimEnabled">false</item>
+    </style>
+</resources>

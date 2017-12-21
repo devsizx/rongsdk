@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="plugin_sdk">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/lib_anzhi/libs/plugin_sdk.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

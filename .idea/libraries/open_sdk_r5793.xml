@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="open_sdk_r5793">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/lib_iqiyi/libs/open_sdk_r5793.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

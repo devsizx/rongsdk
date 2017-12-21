@@ -1,0 +1,5 @@
+int drawable pps_push_ads 0x7f020000
+int string app_name 0x7f030000
+int string ppsgame_init_error 0x7f030001
+int string ppsgame_plugin_loading 0x7f030002
+int string ppsgame_plugin_space_error 0x7f030003

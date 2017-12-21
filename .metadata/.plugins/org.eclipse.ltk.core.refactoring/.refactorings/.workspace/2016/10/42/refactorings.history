@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Delete 3 resources" deleteContents="true" description="Delete 3 resources" element1="/Direct-plugin" element2="/Mzw_olsdk" element3="/Mzw_olsdk_test" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="3" stamp="1476071367703"/>
+</session>

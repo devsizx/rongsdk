@@ -1,0 +1,34 @@
+[
+    {
+        "merged": "D:\\wangzhixin\\RongheSDK\\rongsdk\\lib_anzhi\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable\\hpay_top_back_selector.xml",
+        "source": "D:\\wangzhixin\\RongheSDK\\rongsdk\\lib_anzhi\\build\\intermediates\\bundles\\debug\\res\\drawable\\hpay_top_back_selector.xml"
+    },
+    {
+        "merged": "D:\\wangzhixin\\RongheSDK\\rongsdk\\lib_anzhi\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable\\hpay_bg_web.xml",
+        "source": "D:\\wangzhixin\\RongheSDK\\rongsdk\\lib_anzhi\\build\\intermediates\\bundles\\debug\\res\\drawable\\hpay_bg_web.xml"
+    },
+    {
+        "merged": "D:\\wangzhixin\\RongheSDK\\rongsdk\\lib_anzhi\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable\\hpay_edit.xml",
+        "source": "D:\\wangzhixin\\RongheSDK\\rongsdk\\lib_anzhi\\build\\intermediates\\bundles\\debug\\res\\drawable\\hpay_edit.xml"
+    },
+    {
+        "merged": "D:\\wangzhixin\\RongheSDK\\rongsdk\\lib_anzhi\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable\\hpay_bg.xml",
+        "source": "D:\\wangzhixin\\RongheSDK\\rongsdk\\lib_anzhi\\build\\intermediates\\bundles\\debug\\res\\drawable\\hpay_bg.xml"
+    },
+    {
+        "merged": "D:\\wangzhixin\\RongheSDK\\rongsdk\\lib_anzhi\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable\\hpay_progress_img_style.xml",
+        "source": "D:\\wangzhixin\\RongheSDK\\rongsdk\\lib_anzhi\\build\\intermediates\\bundles\\debug\\res\\drawable\\hpay_progress_img_style.xml"
+    },
+    {
+        "merged": "D:\\wangzhixin\\RongheSDK\\rongsdk\\lib_anzhi\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable\\hpay_pb_web_title.xml",
+        "source": "D:\\wangzhixin\\RongheSDK\\rongsdk\\lib_anzhi\\build\\intermediates\\bundles\\debug\\res\\drawable\\hpay_pb_web_title.xml"
+    },
+    {
+        "merged": "D:\\wangzhixin\\RongheSDK\\rongsdk\\lib_anzhi\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable\\hpay_getyzm_bg.xml",
+        "source": "D:\\wangzhixin\\RongheSDK\\rongsdk\\lib_anzhi\\build\\intermediates\\bundles\\debug\\res\\drawable\\hpay_getyzm_bg.xml"
+    },
+    {
+        "merged": "D:\\wangzhixin\\RongheSDK\\rongsdk\\lib_anzhi\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable\\ic_launcher.png",
+        "source": "D:\\wangzhixin\\RongheSDK\\rongsdk\\lib_anzhi\\build\\intermediates\\bundles\\debug\\res\\drawable\\ic_launcher.png"
+    }
+]

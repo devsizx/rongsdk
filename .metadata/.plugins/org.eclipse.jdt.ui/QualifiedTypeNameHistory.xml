@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="com.example.mzw_olsdk_test.MainActivity.LoignCallback"/>
+<fullyQualifiedTypeName name="android.widget.Toast"/>
+<fullyQualifiedTypeName name="com.example.mzw_olsdk_test.MainActivity.InitCallback"/>
+<fullyQualifiedTypeName name="com.rongmzw.sdk.core.callback.MzwInitCallback"/>
+<fullyQualifiedTypeName name="com.rongmzw.sdk.core.callback.MzwLoginCallback"/>
+<fullyQualifiedTypeName name="com.rongmzw.sdk.core.callback.MzwPayCallback"/>
+<fullyQualifiedTypeName name="com.rongmzw.sdk.core.MzwSdkController"/>
+</qualifiedTypeNameHistroy>

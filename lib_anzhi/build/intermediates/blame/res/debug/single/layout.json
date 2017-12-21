@@ -1,0 +1,82 @@
+[
+    {
+        "merged": "D:\\wangzhixin\\RongheSDK\\rongsdk\\lib_anzhi\\build\\intermediates\\res\\merged\\debug\\layout\\hpay_act_wap.xml",
+        "source": "D:\\wangzhixin\\RongheSDK\\rongsdk\\lib_anzhi\\res\\layout\\hpay_act_wap.xml"
+    },
+    {
+        "merged": "D:\\wangzhixin\\RongheSDK\\rongsdk\\lib_anzhi\\build\\intermediates\\res\\merged\\debug\\layout\\hpay_act_dy.xml",
+        "source": "D:\\wangzhixin\\RongheSDK\\rongsdk\\lib_anzhi\\res\\layout\\hpay_act_dy.xml"
+    },
+    {
+        "merged": "D:\\wangzhixin\\RongheSDK\\rongsdk\\lib_anzhi\\build\\intermediates\\res\\merged\\debug\\layout\\hpay_text_progress.xml",
+        "source": "D:\\wangzhixin\\RongheSDK\\rongsdk\\lib_anzhi\\res\\layout\\hpay_text_progress.xml"
+    },
+    {
+        "merged": "D:\\wangzhixin\\RongheSDK\\rongsdk\\lib_anzhi\\build\\intermediates\\res\\merged\\debug\\layout\\hpay_act_retain.xml",
+        "source": "D:\\wangzhixin\\RongheSDK\\rongsdk\\lib_anzhi\\res\\layout\\hpay_act_retain.xml"
+    },
+    {
+        "merged": "D:\\wangzhixin\\RongheSDK\\rongsdk\\lib_anzhi\\build\\intermediates\\res\\merged\\debug\\layout\\hpay_contentview_dd.xml",
+        "source": "D:\\wangzhixin\\RongheSDK\\rongsdk\\lib_anzhi\\res\\layout\\hpay_contentview_dd.xml"
+    },
+    {
+        "merged": "D:\\wangzhixin\\RongheSDK\\rongsdk\\lib_anzhi\\build\\intermediates\\res\\merged\\debug\\layout\\anzhi_notification_small_image.xml",
+        "source": "D:\\wangzhixin\\RongheSDK\\rongsdk\\lib_anzhi\\res\\layout\\anzhi_notification_small_image.xml"
+    },
+    {
+        "merged": "D:\\wangzhixin\\RongheSDK\\rongsdk\\lib_anzhi\\build\\intermediates\\res\\merged\\debug\\layout\\hpay_contentview_dy.xml",
+        "source": "D:\\wangzhixin\\RongheSDK\\rongsdk\\lib_anzhi\\res\\layout\\hpay_contentview_dy.xml"
+    },
+    {
+        "merged": "D:\\wangzhixin\\RongheSDK\\rongsdk\\lib_anzhi\\build\\intermediates\\res\\merged\\debug\\layout\\hpay_act_dd_p.xml",
+        "source": "D:\\wangzhixin\\RongheSDK\\rongsdk\\lib_anzhi\\res\\layout\\hpay_act_dd_p.xml"
+    },
+    {
+        "merged": "D:\\wangzhixin\\RongheSDK\\rongsdk\\lib_anzhi\\build\\intermediates\\res\\merged\\debug\\layout\\hpay_act_wap_p.xml",
+        "source": "D:\\wangzhixin\\RongheSDK\\rongsdk\\lib_anzhi\\res\\layout\\hpay_act_wap_p.xml"
+    },
+    {
+        "merged": "D:\\wangzhixin\\RongheSDK\\rongsdk\\lib_anzhi\\build\\intermediates\\res\\merged\\debug\\layout\\hpay_act_wap_full.xml",
+        "source": "D:\\wangzhixin\\RongheSDK\\rongsdk\\lib_anzhi\\res\\layout\\hpay_act_wap_full.xml"
+    },
+    {
+        "merged": "D:\\wangzhixin\\RongheSDK\\rongsdk\\lib_anzhi\\build\\intermediates\\res\\merged\\debug\\layout\\hpay_act_dd.xml",
+        "source": "D:\\wangzhixin\\RongheSDK\\rongsdk\\lib_anzhi\\res\\layout\\hpay_act_dd.xml"
+    },
+    {
+        "merged": "D:\\wangzhixin\\RongheSDK\\rongsdk\\lib_anzhi\\build\\intermediates\\res\\merged\\debug\\layout\\anzhi_notification_big_image.xml",
+        "source": "D:\\wangzhixin\\RongheSDK\\rongsdk\\lib_anzhi\\res\\layout\\anzhi_notification_big_image.xml"
+    },
+    {
+        "merged": "D:\\wangzhixin\\RongheSDK\\rongsdk\\lib_anzhi\\build\\intermediates\\res\\merged\\debug\\layout\\hpay_contentview_dd_p.xml",
+        "source": "D:\\wangzhixin\\RongheSDK\\rongsdk\\lib_anzhi\\res\\layout\\hpay_contentview_dd_p.xml"
+    },
+    {
+        "merged": "D:\\wangzhixin\\RongheSDK\\rongsdk\\lib_anzhi\\build\\intermediates\\res\\merged\\debug\\layout\\hpay_contentview_dy_p.xml",
+        "source": "D:\\wangzhixin\\RongheSDK\\rongsdk\\lib_anzhi\\res\\layout\\hpay_contentview_dy_p.xml"
+    },
+    {
+        "merged": "D:\\wangzhixin\\RongheSDK\\rongsdk\\lib_anzhi\\build\\intermediates\\res\\merged\\debug\\layout\\hpay_dialog_dd.xml",
+        "source": "D:\\wangzhixin\\RongheSDK\\rongsdk\\lib_anzhi\\res\\layout\\hpay_dialog_dd.xml"
+    },
+    {
+        "merged": "D:\\wangzhixin\\RongheSDK\\rongsdk\\lib_anzhi\\build\\intermediates\\res\\merged\\debug\\layout\\hpay_act_retain_p.xml",
+        "source": "D:\\wangzhixin\\RongheSDK\\rongsdk\\lib_anzhi\\res\\layout\\hpay_act_retain_p.xml"
+    },
+    {
+        "merged": "D:\\wangzhixin\\RongheSDK\\rongsdk\\lib_anzhi\\build\\intermediates\\res\\merged\\debug\\layout\\hpay_dialog_dd_p.xml",
+        "source": "D:\\wangzhixin\\RongheSDK\\rongsdk\\lib_anzhi\\res\\layout\\hpay_dialog_dd_p.xml"
+    },
+    {
+        "merged": "D:\\wangzhixin\\RongheSDK\\rongsdk\\lib_anzhi\\build\\intermediates\\res\\merged\\debug\\layout\\hpay_act_dy_p.xml",
+        "source": "D:\\wangzhixin\\RongheSDK\\rongsdk\\lib_anzhi\\res\\layout\\hpay_act_dy_p.xml"
+    },
+    {
+        "merged": "D:\\wangzhixin\\RongheSDK\\rongsdk\\lib_anzhi\\build\\intermediates\\res\\merged\\debug\\layout\\hpay_dialog_dy_p.xml",
+        "source": "D:\\wangzhixin\\RongheSDK\\rongsdk\\lib_anzhi\\res\\layout\\hpay_dialog_dy_p.xml"
+    },
+    {
+        "merged": "D:\\wangzhixin\\RongheSDK\\rongsdk\\lib_anzhi\\build\\intermediates\\res\\merged\\debug\\layout\\hpay_dialog_dy.xml",
+        "source": "D:\\wangzhixin\\RongheSDK\\rongsdk\\lib_anzhi\\res\\layout\\hpay_dialog_dy.xml"
+    }
+]

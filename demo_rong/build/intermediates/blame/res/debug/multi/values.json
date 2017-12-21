@@ -1,0 +1,353 @@
+[
+    {
+        "outputFile": "D:\\wangzhixin\\RongheSDK\\rongsdk\\demo_rong\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values\\values.xml",
+        "map": [
+            {
+                "to": {
+                    "startLine": 2,
+                    "startColumn": 4,
+                    "startOffset": 55,
+                    "endColumn": 57,
+                    "endOffset": 108
+                },
+                "from": {
+                    "file": "D:\\wangzhixin\\RongheSDK\\rongsdk\\demo_rong\\res\\values\\dimens.xml",
+                    "position": {
+                        "startLine": 3,
+                        "startColumn": 4,
+                        "startOffset": 92,
+                        "endColumn": 57,
+                        "endOffset": 145
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 3,
+                    "startColumn": 4,
+                    "startOffset": 113,
+                    "endColumn": 55,
+                    "endOffset": 164
+                },
+                "from": {
+                    "file": "D:\\wangzhixin\\RongheSDK\\rongsdk\\demo_rong\\res\\values\\dimens.xml",
+                    "position": {
+                        "startLine": 4,
+                        "startColumn": 4,
+                        "startOffset": 151,
+                        "endColumn": 55,
+                        "endOffset": 202
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 4,
+                    "startColumn": 4,
+                    "startOffset": 169,
+                    "endColumn": 37,
+                    "endOffset": 202
+                },
+                "from": {
+                    "file": "D:\\wangzhixin\\RongheSDK\\rongsdk\\demo_rong\\res\\values\\dimens.xml",
+                    "position": {
+                        "startLine": 5,
+                        "startColumn": 4,
+                        "startOffset": 208,
+                        "endColumn": 37,
+                        "endOffset": 241
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 5,
+                    "startColumn": 4,
+                    "startOffset": 207,
+                    "endColumn": 41,
+                    "endOffset": 244
+                },
+                "from": {
+                    "file": "D:\\wangzhixin\\RongheSDK\\rongsdk\\demo_rong\\res\\values\\dimens.xml",
+                    "position": {
+                        "startLine": 6,
+                        "startColumn": 4,
+                        "startOffset": 247,
+                        "endColumn": 41,
+                        "endOffset": 284
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 6,
+                    "startColumn": 4,
+                    "startOffset": 249,
+                    "endColumn": 45,
+                    "endOffset": 290
+                },
+                "from": {
+                    "file": "D:\\wangzhixin\\RongheSDK\\rongsdk\\demo_rong\\res\\values\\dimens.xml",
+                    "position": {
+                        "startLine": 7,
+                        "startColumn": 4,
+                        "startOffset": 290,
+                        "endColumn": 45,
+                        "endOffset": 331
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 7,
+                    "startColumn": 4,
+                    "startOffset": 295,
+                    "endColumn": 47,
+                    "endOffset": 338
+                },
+                "from": {
+                    "file": "D:\\wangzhixin\\RongheSDK\\rongsdk\\demo_rong\\res\\values\\strings.xml",
+                    "position": {
+                        "startLine": 3,
+                        "startColumn": 4,
+                        "startOffset": 56,
+                        "endColumn": 47,
+                        "endOffset": 99
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 8,
+                    "startColumn": 4,
+                    "startOffset": 343,
+                    "endColumn": 41,
+                    "endOffset": 380
+                },
+                "from": {
+                    "file": "D:\\wangzhixin\\RongheSDK\\rongsdk\\demo_rong\\res\\values\\strings.xml",
+                    "position": {
+                        "startLine": 13,
+                        "startColumn": 4,
+                        "startOffset": 471,
+                        "endColumn": 41,
+                        "endOffset": 508
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 9,
+                    "startColumn": 4,
+                    "startOffset": 385,
+                    "endColumn": 37,
+                    "endOffset": 418
+                },
+                "from": {
+                    "file": "D:\\wangzhixin\\RongheSDK\\rongsdk\\demo_rong\\res\\values\\strings.xml",
+                    "position": {
+                        "startLine": 11,
+                        "startColumn": 4,
+                        "startOffset": 386,
+                        "endColumn": 37,
+                        "endOffset": 419
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 10,
+                    "startColumn": 4,
+                    "startOffset": 423,
+                    "endColumn": 39,
+                    "endOffset": 458
+                },
+                "from": {
+                    "file": "D:\\wangzhixin\\RongheSDK\\rongsdk\\demo_rong\\res\\values\\strings.xml",
+                    "position": {
+                        "startLine": 6,
+                        "startColumn": 4,
+                        "startOffset": 182,
+                        "endColumn": 39,
+                        "endOffset": 217
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 11,
+                    "startColumn": 4,
+                    "startOffset": 463,
+                    "endColumn": 36,
+                    "endOffset": 495
+                },
+                "from": {
+                    "file": "D:\\wangzhixin\\RongheSDK\\rongsdk\\demo_rong\\res\\values\\strings.xml",
+                    "position": {
+                        "startLine": 4,
+                        "startColumn": 4,
+                        "startOffset": 104,
+                        "endColumn": 36,
+                        "endOffset": 136
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 12,
+                    "startColumn": 4,
+                    "startOffset": 500,
+                    "endColumn": 40,
+                    "endOffset": 536
+                },
+                "from": {
+                    "file": "D:\\wangzhixin\\RongheSDK\\rongsdk\\demo_rong\\res\\values\\strings.xml",
+                    "position": {
+                        "startLine": 5,
+                        "startColumn": 4,
+                        "startOffset": 141,
+                        "endColumn": 40,
+                        "endOffset": 177
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 13,
+                    "startColumn": 4,
+                    "startOffset": 541,
+                    "endColumn": 34,
+                    "endOffset": 571
+                },
+                "from": {
+                    "file": "D:\\wangzhixin\\RongheSDK\\rongsdk\\demo_rong\\res\\values\\strings.xml",
+                    "position": {
+                        "startLine": 9,
+                        "startColumn": 4,
+                        "startOffset": 311,
+                        "endColumn": 34,
+                        "endOffset": 341
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 14,
+                    "startColumn": 4,
+                    "startOffset": 576,
+                    "endColumn": 43,
+                    "endOffset": 615
+                },
+                "from": {
+                    "file": "D:\\wangzhixin\\RongheSDK\\rongsdk\\demo_rong\\res\\values\\strings.xml",
+                    "position": {
+                        "startLine": 8,
+                        "startColumn": 4,
+                        "startOffset": 267,
+                        "endColumn": 43,
+                        "endOffset": 306
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 15,
+                    "startColumn": 4,
+                    "startOffset": 620,
+                    "endColumn": 39,
+                    "endOffset": 655
+                },
+                "from": {
+                    "file": "D:\\wangzhixin\\RongheSDK\\rongsdk\\demo_rong\\res\\values\\strings.xml",
+                    "position": {
+                        "startLine": 10,
+                        "startColumn": 4,
+                        "startOffset": 346,
+                        "endColumn": 39,
+                        "endOffset": 381
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 16,
+                    "startColumn": 4,
+                    "startOffset": 660,
+                    "endColumn": 46,
+                    "endOffset": 702
+                },
+                "from": {
+                    "file": "D:\\wangzhixin\\RongheSDK\\rongsdk\\demo_rong\\res\\values\\strings.xml",
+                    "position": {
+                        "startLine": 12,
+                        "startColumn": 4,
+                        "startOffset": 424,
+                        "endColumn": 46,
+                        "endOffset": 466
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 17,
+                    "startColumn": 4,
+                    "startOffset": 707,
+                    "endColumn": 44,
+                    "endOffset": 747
+                },
+                "from": {
+                    "file": "D:\\wangzhixin\\RongheSDK\\rongsdk\\demo_rong\\res\\values\\strings.xml",
+                    "position": {
+                        "startLine": 7,
+                        "startColumn": 4,
+                        "startOffset": 222,
+                        "endColumn": 44,
+                        "endOffset": 262
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 18,
+                    "startColumn": 4,
+                    "startOffset": 752,
+                    "endLine": 19,
+                    "endColumn": 12,
+                    "endOffset": 821
+                },
+                "from": {
+                    "file": "D:\\wangzhixin\\RongheSDK\\rongsdk\\demo_rong\\res\\values\\styles.xml",
+                    "position": {
+                        "startLine": 1,
+                        "startColumn": 4,
+                        "startOffset": 17,
+                        "endLine": 2,
+                        "endColumn": 12,
+                        "endOffset": 87
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 20,
+                    "startColumn": 4,
+                    "startOffset": 826,
+                    "endLine": 21,
+                    "endColumn": 12,
+                    "endOffset": 884
+                },
+                "from": {
+                    "file": "D:\\wangzhixin\\RongheSDK\\rongsdk\\demo_rong\\res\\values\\styles.xml",
+                    "position": {
+                        "startLine": 4,
+                        "startColumn": 4,
+                        "startOffset": 95,
+                        "endLine": 5,
+                        "endColumn": 12,
+                        "endOffset": 154
+                    }
+                }
+            }
+        ]
+    }
+]

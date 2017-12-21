@@ -1,0 +1,205 @@
+package com.example.mzw_olsdk_test;
+
+import android.app.Activity;
+import android.content.pm.ActivityInfo;
+import android.os.Bundle;
+import android.os.Handler;
+import android.os.Looper;
+import android.os.Message;
+import android.util.Log;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Toast;
+
+import com.muzhiwan.sdk.core.MzwSdkController;
+import com.muzhiwan.sdk.core.callback.MzwInitCallback;
+import com.muzhiwan.sdk.core.callback.MzwLoignCallback;
+import com.muzhiwan.sdk.core.callback.MzwPayCallback;
+import com.muzhiwan.sdk.core.callback.MzwPostGiftCodeCallback;
+import com.muzhiwan.sdk.service.RongMzwOrder;
+
+public class MainActivity extends Activity implements View.OnClickListener {
+
+	private static String TAG = MainActivity.class.getName();
+	private EditText pay_edit;
+	private Button login, logout, pay_btn, gift_btn;
+	private MzwOrder order;
+	private Handler mHandler;
+	private boolean isInit = false;
+	private boolean isLogin = false;
+	private static final int MSG_INIT = 0X01;
+	private static final int MSG_LOGIN = 0X02;
+
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		/**
+		 * 设置屏幕方向
+		 */
+		setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_SENSOR_LANDSCAPE);
+
+		setContentView(R.layout.activity_main);
+		login = (Button) findViewById(R.id.login);
+		logout = (Button) findViewById(R.id.logout);
+		pay_edit = (EditText) findViewById(R.id.pay_edit);
+		pay_btn = (Button) findViewById(R.id.pay_btn);
+		gift_btn = (Button) findViewById(R.id.gift);
+		login.setOnClickListener(this);
+		logout.setOnClickListener(this);
+		pay_btn.setOnClickListener(this);
+		gift_btn.setOnClickListener(this);
+
+		mHandler = new Handler() {
+			@Override
+			public void handleMessage(Message msg) {
+				super.handleMessage(msg);
+				switch (msg.what) {
+				case MSG_INIT:
+					if (msg.arg1 == 0) {
+						isInit = false;
+						showToast("SDK初始化失败，请退出重试");
+					} else {
+						isInit = true;
+						showToast("SDK初始化成功，正在登录...");
+						MzwSdkController.getInstance().doLogin(new MzwLoignCallback() {
+							@Override
+							public void onResult(int code, String msg) {
+								Log.e("login success-----back with client----", "code:" + code + "--------msg:" + msg);
+								Message message = new Message();
+								message.what = MSG_LOGIN;
+								message.arg1 = code;
+								mHandler.handleMessage(message);
+							}
+						});
+					}
+					break;
+				case MSG_LOGIN:
+					if (msg.arg1 == 1) {
+						isLogin = true;
+						showToast("登录成功");
+					} else if (msg.arg1 == 6) {
+						isLogin = false;
+						// login();
+					} else if (msg.arg1 == 4) {
+						isLogin = false;
+						showToast("取消登录");
+					} else {
+						isLogin = false;
+						showToast("登录失败");
+					}
+					break;
+				}
+			}
+		};
+
+		MzwSdkController.getInstance().doUpdateAuto(MzwSdkController.UPDATE_ISFORCED_YES);
+
+		MzwSdkController.getInstance().init(MainActivity.this, MzwSdkController.ORIENTATION_HORIZONTAL, new MzwInitCallback() {
+
+			@Override
+			public void onResult(int code, String msg) {
+				if (code == 1) {
+					Message message = new Message();
+					message.what = MSG_INIT;
+					message.arg1 = code;
+					mHandler.handleMessage(message);
+				}
+			}
+		});
+
+	}
+
+	@Override
+	public void onBackPressed() {
+		MzwSdkController.getInstance().destory();
+		Log.e("---------onDestroy---------", "destory....");
+		super.onBackPressed();
+	}
+
+	@Override
+	public void onClick(View v) {
+		switch (v.getId()) {
+		case R.id.login:
+			login();
+			break;
+		case R.id.logout:
+			isLogin = false;
+			MzwSdkController.getInstance().doLogout();
+			break;
+		case R.id.pay_btn:
+			if (isInit) {
+				if (isLogin) {
+					String pay_edit_value = pay_edit.getText().toString().trim();
+					if (pay_edit_value.equals("") || pay_edit_value.equals("0")) {
+						showToast("输入数据不合法，转换为默认值1元进行支付");
+						pay_edit_value = "1";
+					}
+					pay("1");
+
+				} else {
+					showToast("请先进行登录，再进行操作");
+				}
+			} else {
+				showToast("请先初始化SDK，再进行操作");
+			}
+			break;
+		case R.id.gift:
+			if (isInit) {
+				if (isLogin) {
+					gift();
+				} else {
+					showToast("请先进行登录，再进行操作");
+				}
+			} else {
+				showToast("请先初始化SDK，再进行操作");
+			}
+			break;
+		default:
+			break;
+		}
+	}
+
+	public void login() {
+		MzwSdkController.getInstance().doLogin(new MzwLoignCallback() {
+			@Override
+			public void onResult(int code, String msg) {
+				Log.e("login success-----back with client----", "code:" + code + "--------msg:" + msg);
+				Message message = new Message();
+				message.what = MSG_LOGIN;
+				message.arg1 = code;
+				mHandler.handleMessage(message);
+			}
+		});
+	}
+
+	public void pay(String priceValue) {
+		order = new MzwOrder();
+		order.setMoney(Double.parseDouble(priceValue));
+		order.setProductname("拇指玩测试商品" + ((int) (Math.random() * 10) + 1));
+		order.setProductdesc("成为拇指玩超级会员");
+		order.setExtern("xxxxxx");
+		MzwSdkController.getInstance().doPay(order, new MzwPayCallback() {
+			@Override
+			public void onResult(int code, MzwOrder order) {
+				Log.e("pay success-----back with client----", "code:" + code + "--------order:" + order);
+				Toast.makeText(MainActivity.this, "1111", Toast.LENGTH_SHORT).show();
+			}
+		});
+	}
+
+	public void gift() {
+		MzwSdkController.getInstance().doPostGiftCode("NWC685384", new MzwPostGiftCodeCallback() {
+
+			@Override
+			public void onResult(int code, String msg) {
+				Log.e("doPostGiftCode finished-----back with client----", "code:" + code + "--------msg:" + msg);
+			}
+		});
+	}
+
+	public void showToast(String msg) {
+		Toast.makeText(this, msg, Toast.LENGTH_LONG).show();
+	}
+
+}
