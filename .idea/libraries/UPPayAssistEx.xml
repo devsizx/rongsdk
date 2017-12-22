@@ -1,7 +1,7 @@
 <component name="libraryTable">
   <library name="UPPayAssistEx">
     <CLASSES>
-      <root url="jar://$PROJECT_DIR$/lib_anzhi/libs/UPPayAssistEx.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib_iqiyi/libs/UPPayAssistEx.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

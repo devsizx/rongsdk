@@ -18,20 +18,16 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.rongmzw.frame.sdk.api.RongMzwSdkController;
-import com.rongmzw.frame.sdk.callback.RongMzwExitGameCallback;
-import com.rongmzw.frame.sdk.callback.RongMzwInitCallback;
-import com.rongmzw.frame.sdk.callback.RongMzwLoignCallback;
-import com.rongmzw.frame.sdk.callback.RongMzwPayCallback;
-import com.rongmzw.frame.sdk.callback.RongMzwStaPayCallback;
+import com.rongmzw.frame.sdk.api.RongSdkController;
+import com.rongmzw.frame.sdk.callback.RongCallback;
 import com.rongmzw.frame.sdk.domain.RongGameInfo;
-import com.rongmzw.frame.sdk.domain.RongMzwOrder;
+import com.rongmzw.frame.sdk.domain.RongOrder;
 
 public class MainActivity extends Activity implements View.OnClickListener {
     private static String TAG = MainActivity.class.getName();
     private EditText pay_edit;
     private Button loginbtn, logoutbtn, paybtn, stapaybtn, subgameinfobtn, exitgamebtn;
-    private RongMzwOrder order;
+    private RongOrder order;
     private boolean isInit = false;
     private boolean isLogin = false;
     private static final int MSG_INIT = 0x01;
@@ -120,14 +116,37 @@ public class MainActivity extends Activity implements View.OnClickListener {
             ab.show();
         } else {
             //融合SDK初始化接口
-            RongMzwSdkController.getInstance().callInit(MainActivity.this, RongMzwSdkController.ORIENTATION_HORIZONTAL, new RongMzwInitCallback() {
+            RongSdkController.getInstance().callInit(MainActivity.this, RongSdkController.ORIENTATION_HORIZONTAL, new RongCallback() {
 
                 @Override
-                public void onResult(int code, String msg) {
-                    isInit = true;
+                public void onResult(int type, int code, String msg) {
                     Message message = new Message();
-                    message.what = MSG_INIT;
-                    message.arg1 = code;
+                    switch (type) {
+                        case RongCallback.TYPE_INIT:
+                            Log.e(TAG, "initcallback----code:" + code + "--------msg:" + msg);
+                            message.what = MSG_INIT;
+                            message.arg1 = code;
+                            break;
+                        case RongCallback.TYPE_LOGIN:
+                            Log.e(TAG, "logincallback----code:" + code + "--------msg:" + msg);
+                            message.what = MSG_LOGIN;
+                            message.arg1 = code;
+                            break;
+                        case RongCallback.TYPE_PAY:
+                            Log.e(TAG, "paycallback----code:" + code + "--------order:" + msg);
+                            break;
+                        case RongCallback.TYPE_STAPAY:
+                            Log.e(TAG, "stapaycallback----code:" + code + "--------msg:" + msg);
+                            break;
+                        case RongCallback.TYPE_EXITGAME:
+                            Log.e(TAG, "exitgamecallback----code:" + code + "--------order:" + msg);
+                            if (code == 1) {
+                                finish();
+                            } else {
+
+                            }
+                            break;
+                    }
                     mHandler.handleMessage(message);
                 }
             });
@@ -135,20 +154,11 @@ public class MainActivity extends Activity implements View.OnClickListener {
     }
 
     public void login() {
-        RongMzwSdkController.getInstance().callLogin(new RongMzwLoignCallback() {
-            @Override
-            public void onResult(int code, String msg) {
-                Log.e(TAG, "logincallback----code:" + code + "--------msg:" + msg);
-                Message message = new Message();
-                message.what = MSG_LOGIN;
-                message.arg1 = code;
-                mHandler.handleMessage(message);
-            }
-        });
+        RongSdkController.getInstance().callLogin();
     }
 
     public void pay(String priceValue) {
-        order = new RongMzwOrder();
+        order = new RongOrder();
         order.setProductPrice(Integer.parseInt(priceValue) == 0 ? 1 : Integer.parseInt(priceValue));
         order.setProductName("拇指玩测试商品" + ((int) (Math.random() * 10) + 1));
         order.setProductDesc("成为拇指玩超级会员");
@@ -157,73 +167,63 @@ public class MainActivity extends Activity implements View.OnClickListener {
         order.setRoleId("roleId");
         order.setServerId("ppsmobile_s1");
         order.setUserData("cp message");
-        RongMzwSdkController.getInstance().callPay(order, new RongMzwPayCallback() {
-            @Override
-            public void onResult(int code, String result) {
-                Log.e(TAG, "paycallback----code:" + code + "--------order:" + result);
-            }
-        });
+        RongSdkController.getInstance().callPay(order);
     }
 
     public void stapay() {
-        RongMzwSdkController.getInstance().callStaPay(new RongMzwStaPayCallback() {
-            @Override
-            public void onResult(int code, String msg) {
-                Log.e(TAG, "stapaycallback----code:" + code + "--------msg:" + msg);
-            }
-        });
+        RongSdkController.getInstance().callStaPay();
     }
 
     public void subGameInfo() {
         RongGameInfo gameInfo = new RongGameInfo();
         gameInfo.setGameArea("gamearea");
-        gameInfo.setGameAreaID("gameareaid");
+        gameInfo.setGameAreaID("ppsmobile_s1");
         gameInfo.setGameLevel("17");
-        gameInfo.setRoleId("roleid");
+        gameInfo.setRoleId("ppsmobile_s1");
         gameInfo.setUserRole("userrole");
-        RongMzwSdkController.getInstance().callSubGameInfo(gameInfo);
+        RongSdkController.getInstance().callSubGameInfo(gameInfo);
     }
 
     @Override
     protected void onNewIntent(Intent intent) {
-        RongMzwSdkController.getInstance().callOnNewIntentInvoked(intent);
+        RongSdkController.getInstance().callOnNewIntentInvoked(intent);
         super.onNewIntent(intent);
     }
 
     @Override
     protected void onPause() {
-        RongMzwSdkController.getInstance().callOnPauseInvoked();
+        RongSdkController.getInstance().callOnPauseInvoked();
         super.onPause();
     }
 
     @Override
     protected void onResume() {
-        RongMzwSdkController.getInstance().callOnResumeInvoked();
+        RongSdkController.getInstance().callOnResumeInvoked();
         super.onResume();
     }
 
     @Override
     protected void onStart() {
-        RongMzwSdkController.getInstance().callOnStartInvoked();
+        RongSdkController.getInstance().callOnStartInvoked();
         super.onStart();
     }
 
     @Override
     protected void onStop() {
-        RongMzwSdkController.getInstance().callOnStopInvoked();
+        RongSdkController.getInstance().callOnStopInvoked();
         super.onStop();
     }
 
     @Override
     public void onBackPressed() {
-        RongMzwSdkController.getInstance().callOnDestoryInvoked();
         super.onBackPressed();
+        RongSdkController.getInstance().callOnDestoryInvoked();
     }
 
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        RongMzwSdkController.getInstance().callOnDestoryInvoked();
+        RongSdkController.getInstance().callOnDestoryInvoked();
     }
 
     @Override
@@ -269,12 +269,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
     }
 
     private void exitgame() {
-        RongMzwSdkController.getInstance().callExitGame(new RongMzwExitGameCallback() {
-            @Override
-            public void onResult(int code, String result) {
-                Log.e(TAG, "exitgamecallback----code:" + code + "--------order:" + result);
-            }
-        });
+        RongSdkController.getInstance().callExitGame();
     }
 
     private void clickStaPayBtn() {
@@ -308,7 +303,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
 
     private void logout() {
         isLogin = false;
-        RongMzwSdkController.getInstance().callLogout();
+        RongSdkController.getInstance().callLogout();
     }
 
     public void showToast(String msg) {

@@ -11,7 +11,7 @@
 
 
     <application
-        android:name=".DemoApplication"
+        android:name="com.rongmzw.demo.DemoApplication"
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
         android:screenOrientation="landscape"
