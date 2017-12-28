@@ -94,6 +94,10 @@
     <orderEntry type="library" exported="" name="ipaynow_onlywechat_v1.3.2" level="project" />
     <orderEntry type="library" exported="" name="ppssdkpluginlibrary" level="project" />
     <orderEntry type="library" exported="" name="UPPayPluginExPro" level="project" />
+    <orderEntry type="library" exported="" name="okhttputils-2.6.2" level="project" />
     <orderEntry type="module" module-name="lib_common" exported="" />
+    <orderEntry type="library" exported="" name="okio-1.8.0" level="project" />
+    <orderEntry type="library" exported="" name="okhttp-3.3.1" level="project" />
+    <orderEntry type="library" exported="" name="gson-2.8.0" level="project" />
   </component>
 </module>

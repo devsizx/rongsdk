@@ -12,15 +12,19 @@ import com.rongmzw.frame.sdk.callback.RongCallback;
 import com.rongmzw.frame.sdk.domain.RongGameInfo;
 import com.rongmzw.frame.sdk.domain.RongOrder;
 import com.rongmzw.frame.sdk.util.Des3Util;
+import com.zhy.http.okhttp.OkHttpUtils;
+import com.zhy.http.okhttp.callback.StringCallback;
 
 import org.json.JSONException;
 import org.json.JSONObject;
+
+import okhttp3.Call;
 
 /**
  * Created by Administrator on 2017/12/13.
  */
 
-public class RongSdkController implements RongSdkApi {
+public class RongSdkController implements RongSdkApi, RongSdkRequestApi {
     private static String TAG = RongSdkController.class.getSimpleName();
     private String Appkey = "1378375366Az26xatNyDOD5EM6D2ys";// SDK 初始化参数
     private String AppSecret = "ug2KMdLi2JSr4naOE48XmL3h";
@@ -105,6 +109,7 @@ public class RongSdkController implements RongSdkApi {
     @Override
     public void callInit(Activity gameActivity, int screenOrientation, RongCallback rongCallback) {
         Log.e(TAG, "anzhi callInit......");
+        initRequest();
         this.gameActivity = gameActivity;
         this.rongCallback = rongCallback;
         anzhiSDK.init(gameActivity, Appkey, AppSecret, callback);
@@ -194,6 +199,51 @@ public class RongSdkController implements RongSdkApi {
     public void callExitGame() {
         Log.e(TAG, "anzhi callExitGame......");
         anzhiSDK.exitGame(this.gameActivity);
+    }
+
+    @Override
+    public void initRequest() {
+        OkHttpUtils.get().url("http://www.baidu.com").build().execute(new StringCallback() {
+            @Override
+            public void onError(Call call, Exception e, int id) {
+
+            }
+
+            @Override
+            public void onResponse(String response, int id) {
+                Log.e(TAG, response.toString());
+            }
+        });
+    }
+
+    @Override
+    public void loginRequest() {
+        OkHttpUtils.get().url("http://www.baidu.com").build().execute(new StringCallback() {
+            @Override
+            public void onError(Call call, Exception e, int id) {
+
+            }
+
+            @Override
+            public void onResponse(String response, int id) {
+                Log.e(TAG, response.toString());
+            }
+        });
+    }
+
+    @Override
+    public void payRequest() {
+        OkHttpUtils.get().url("http://www.baidu.com").build().execute(new StringCallback() {
+            @Override
+            public void onError(Call call, Exception e, int id) {
+
+            }
+
+            @Override
+            public void onResponse(String response, int id) {
+                Log.e(TAG, response.toString());
+            }
+        });
     }
 
 }

@@ -85,4 +85,5 @@ public interface RongSdkApi {
      * 退出游戏
      */
     void callExitGame();
+
 }

@@ -3,12 +3,12 @@
 
     <item
         is-multidex="false"
-        jar="D:\onlinesdk_staversion\Mzw_olsdk\libs\android-support-v13.jar"
+        jar="D:\wangzhixin\RongheSDK\rongsdk\lib_anzhi\build\intermediates\bundles\default\libs\HPay_RX2.7.5_20160401.jar"
         jumboMode="false"
         optimize="true"
         revision="25.0.0"
-        sha1="5b3db0befb5f9a8c310ca661ea2f67da12871fa2">
-        <dex dex="D:\onlinesdk_staversion\Mzw_olsdk\build\intermediates\pre-dexed\debug\android-support-v13_75c15a7951b9d5c8a8b023d9f3347c6fcf282019.jar" />
+        sha1="887f99ec0007588debf2716202544f901cd59194">
+        <dex dex="D:\wangzhixin\RongheSDK\rongsdk\demo_rong\build\intermediates\pre-dexed\debug\HPay_RX2.7.5_20160401_1ec399ba03b0d75733a7cceedf6933484a8ed0dd.jar" />
     </item>
     <item
         is-multidex="false"
@@ -21,30 +21,57 @@
     </item>
     <item
         is-multidex="false"
-        jar="D:\onlinesdk_staversion\Mzw_olsdk\libs\ipaynow_onlywechat_v2.0.2a.jar"
+        jar="C:\Users\Administrator\.android\build-cache\d212522aa3c1ceea98b1dad9538ba464a6c568ff\output\jars\classes.jar"
         jumboMode="false"
         optimize="true"
         revision="25.0.0"
-        sha1="7ef0832c4f134992379300739a6f9c14dd5de4dc">
-        <dex dex="D:\onlinesdk_staversion\Mzw_olsdk\build\intermediates\pre-dexed\debug\ipaynow_onlywechat_v2.0.2a_a0f6936b87fc3604b7ef587c3e36cc380d8ca755.jar" />
+        sha1="155fef2600f48631a9e9665c0873743b6d24e324">
+        <dex dex="D:\wangzhixin\RongheSDK\rongsdk\demo_rong\build\intermediates\pre-dexed\debug\classes_de7a1da4edb797c2f15e4369edf261e4fbbe8816.jar" />
     </item>
     <item
         is-multidex="false"
-        jar="D:\onlinesdk_staversion\Mzw_olsdk\libs\tencent_openapi.jar"
+        jar="D:\wangzhixin\RongheSDK\rongsdk\lib_anzhi\build\intermediates\bundles\default\classes.jar"
         jumboMode="false"
         optimize="true"
         revision="25.0.0"
-        sha1="5216df4168eb0679b392b2d0009661ab66b0e94b">
-        <dex dex="D:\onlinesdk_staversion\Mzw_olsdk\build\intermediates\pre-dexed\debug\tencent_openapi_ced74ba6d325e8305143bc18d5ba57389913057a.jar" />
+        sha1="d9fcf978f737e74aea6f339d93f93f2122f3fdec">
+        <dex dex="D:\wangzhixin\RongheSDK\rongsdk\demo_rong\build\intermediates\pre-dexed\debug\classes_ded12d316a3c440c00ac8ba97c9aa94dec582a09.jar" />
     </item>
     <item
         is-multidex="false"
-        jar="D:\wangzhixin\RongheSDK\rongsdk\lib_mzw\build\intermediates\bundles\default\classes.jar"
+        jar="D:\wangzhixin\RongheSDK\rongsdk\lib_anzhi\build\intermediates\bundles\default\libs\ipaynow_plugin_onlyqqpay_v1.0.8.jar"
         jumboMode="false"
         optimize="true"
         revision="25.0.0"
-        sha1="bd0a3a4ee08419770c6cc627a578ef0fe19c37d2">
-        <dex dex="D:\wangzhixin\RongheSDK\rongsdk\demo_rong\build\intermediates\pre-dexed\debug\classes_e7d8cfb12e73a0e5ee1ef49db0b6e7a519f52847.jar" />
+        sha1="0de9b361d6cb35512faf70a7bc71d11e49308526">
+        <dex dex="D:\wangzhixin\RongheSDK\rongsdk\demo_rong\build\intermediates\pre-dexed\debug\ipaynow_plugin_onlyqqpay_v1.0.8_a244b01bddffe635868185a9956a9d6406de31c9.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\wangzhixin\RongheSDK\rongsdk\lib_anzhi\build\intermediates\bundles\default\libs\fastjson-1.1.33.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="7a42d0cf5f10a84478582096a89c2a55fe4b56f9">
+        <dex dex="D:\wangzhixin\RongheSDK\rongsdk\demo_rong\build\intermediates\pre-dexed\debug\fastjson-1.1.33_505458e5810f164ff39fcefede8ac66cdd41b89a.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\wangzhixin\RongheSDK\rongsdk\lib_anzhi\build\intermediates\bundles\default\libs\UPPayPluginExPro.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="57d49bb116603aad0db12611573fb285a216272b">
+        <dex dex="D:\wangzhixin\RongheSDK\rongsdk\demo_rong\build\intermediates\pre-dexed\debug\UPPayPluginExPro_f2f74567794620957c2797f8e6b0a2b35b5426c1.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\wangzhixin\RongheSDK\rongsdk\lib_anzhi\build\intermediates\bundles\default\libs\anzhipayjar.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="ecf23face50a49cb3781b26e63bc290280fddedd">
+        <dex dex="D:\wangzhixin\RongheSDK\rongsdk\demo_rong\build\intermediates\pre-dexed\debug\anzhipayjar_aa748b17befd14300d9901e8d4f5f49ef3dc6c9d.jar" />
     </item>
     <item
         is-multidex="false"
@@ -57,12 +84,12 @@
     </item>
     <item
         is-multidex="false"
-        jar="D:\onlinesdk_staversion\Mzw_olsdk\libs\UPPayPluginExStd.jar"
+        jar="D:\wangzhixin\RongheSDK\rongsdk\lib_anzhi\build\intermediates\bundles\default\libs\alipaySdk-20160825.jar"
         jumboMode="false"
         optimize="true"
         revision="25.0.0"
-        sha1="645a93e84cd6a30c560252703ad040afe127365f">
-        <dex dex="D:\onlinesdk_staversion\Mzw_olsdk\build\intermediates\pre-dexed\debug\UPPayPluginExStd_e414ecb1787888faf30c585f8e59bc1fbbda9651.jar" />
+        sha1="51a3a51be44b72849f4505e14b6200098ed7d574">
+        <dex dex="D:\wangzhixin\RongheSDK\rongsdk\demo_rong\build\intermediates\pre-dexed\debug\alipaySdk-20160825_7d23f0dcd35d838ba315aceb4e3971ab860f50af.jar" />
     </item>
     <item
         is-multidex="false"
@@ -93,15 +120,6 @@
     </item>
     <item
         is-multidex="false"
-        jar="D:\onlinesdk_staversion\Mzw_olsdk\libs\sdk-ad-3.2.9.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.0"
-        sha1="eab8e01e62582bda0812f66fc0bd890215ef4884">
-        <dex dex="D:\onlinesdk_staversion\Mzw_olsdk\build\intermediates\pre-dexed\debug\sdk-ad-3.2.9_cd3792a4bed7f861167780e73ab8f40d0ae8d7b9.jar" />
-    </item>
-    <item
-        is-multidex="false"
         jar="D:\onlinesdk_staversion\Mzw_olsdk\libs\universal-image-loader-1.9.4.jar"
         jumboMode="false"
         optimize="true"
@@ -111,21 +129,12 @@
     </item>
     <item
         is-multidex="false"
-        jar="D:\wangzhixin\RongheSDK\rongsdk\lib_mzw\build\intermediates\bundles\default\libs\mzw_onlinesdk_3381.jar"
+        jar="D:\wangzhixin\RongheSDK\rongsdk\lib_anzhi\build\intermediates\bundles\default\libs\android-support-v13.jar"
         jumboMode="false"
         optimize="true"
         revision="25.0.0"
-        sha1="7526e0326791b4e09f8de5be34f04dcae9f06848">
-        <dex dex="D:\wangzhixin\RongheSDK\rongsdk\demo_rong\build\intermediates\pre-dexed\debug\mzw_onlinesdk_3381_e428e171e9db46112aa197e572381934f4a45282.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="D:\onlinesdk_staversion\Direct-plugin\build\intermediates\bundles\default\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.0"
-        sha1="c8b997d5a07847a7c818ade656bdb031498846c6">
-        <dex dex="D:\onlinesdk_staversion\Mzw_Demo\build\intermediates\pre-dexed\debug\classes_b09f14acf494f34e12848aeb77cec8ed5a62e47e.jar" />
+        sha1="68a55347ba4ba0593e6a8930f247c0f9f45ab527">
+        <dex dex="D:\wangzhixin\RongheSDK\rongsdk\demo_rong\build\intermediates\pre-dexed\debug\android-support-v13_c5087e251f8f1a7ed59ee0721eef77de9f7a2509.jar" />
     </item>
     <item
         is-multidex="false"
@@ -147,11 +156,92 @@
     </item>
     <item
         is-multidex="false"
+        jar="D:\onlinesdk_staversion\Mzw_olsdk\libs\android-support-v13.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="5b3db0befb5f9a8c310ca661ea2f67da12871fa2">
+        <dex dex="D:\onlinesdk_staversion\Mzw_olsdk\build\intermediates\pre-dexed\debug\android-support-v13_75c15a7951b9d5c8a8b023d9f3347c6fcf282019.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\onlinesdk_staversion\Mzw_olsdk\libs\ipaynow_onlywechat_v2.0.2a.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="7ef0832c4f134992379300739a6f9c14dd5de4dc">
+        <dex dex="D:\onlinesdk_staversion\Mzw_olsdk\build\intermediates\pre-dexed\debug\ipaynow_onlywechat_v2.0.2a_a0f6936b87fc3604b7ef587c3e36cc380d8ca755.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\onlinesdk_staversion\Mzw_olsdk\libs\tencent_openapi.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="5216df4168eb0679b392b2d0009661ab66b0e94b">
+        <dex dex="D:\onlinesdk_staversion\Mzw_olsdk\build\intermediates\pre-dexed\debug\tencent_openapi_ced74ba6d325e8305143bc18d5ba57389913057a.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\onlinesdk_staversion\Mzw_olsdk\libs\UPPayPluginExStd.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="645a93e84cd6a30c560252703ad040afe127365f">
+        <dex dex="D:\onlinesdk_staversion\Mzw_olsdk\build\intermediates\pre-dexed\debug\UPPayPluginExStd_e414ecb1787888faf30c585f8e59bc1fbbda9651.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\wangzhixin\RongheSDK\rongsdk\lib_anzhi\build\intermediates\bundles\default\libs\ipaynow_onlywechat_v2.0.3.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="ff96eab87a77246013aabcdd75ada5f4f6af0c56">
+        <dex dex="D:\wangzhixin\RongheSDK\rongsdk\demo_rong\build\intermediates\pre-dexed\debug\ipaynow_onlywechat_v2.0.3_51aa15f5dfbe233faa9de845b38be970188c40f6.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\wangzhixin\RongheSDK\rongsdk\lib_anzhi\build\intermediates\bundles\default\libs\UPPayAssistEx.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="862f3c8eca793eb7e3616fdba3d9c0fa0a94c58b">
+        <dex dex="D:\wangzhixin\RongheSDK\rongsdk\demo_rong\build\intermediates\pre-dexed\debug\UPPayAssistEx_b5daa6a86c237a692748274fd2f55ae6b39bc91d.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\onlinesdk_staversion\Mzw_olsdk\libs\sdk-ad-3.2.9.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="eab8e01e62582bda0812f66fc0bd890215ef4884">
+        <dex dex="D:\onlinesdk_staversion\Mzw_olsdk\build\intermediates\pre-dexed\debug\sdk-ad-3.2.9_cd3792a4bed7f861167780e73ab8f40d0ae8d7b9.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\wangzhixin\RongheSDK\rongsdk\lib_anzhi\build\intermediates\bundles\default\libs\plugin_sdk.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="51b42477298b10fa234897ccf132af7bff08c2e6">
+        <dex dex="D:\wangzhixin\RongheSDK\rongsdk\demo_rong\build\intermediates\pre-dexed\debug\plugin_sdk_bb99bcab41725e7ed93d1405b034cf386f8d6752.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\onlinesdk_staversion\Direct-plugin\build\intermediates\bundles\default\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="c8b997d5a07847a7c818ade656bdb031498846c6">
+        <dex dex="D:\onlinesdk_staversion\Mzw_Demo\build\intermediates\pre-dexed\debug\classes_b09f14acf494f34e12848aeb77cec8ed5a62e47e.jar" />
+    </item>
+    <item
+        is-multidex="false"
         jar="D:\wangzhixin\RongheSDK\rongsdk\lib_common\build\intermediates\bundles\default\classes.jar"
         jumboMode="false"
         optimize="true"
         revision="25.0.0"
-        sha1="4ab85ace22d957b4c5872aaa5693c802eee8c939">
+        sha1="954a0a06a8c121ef0b14dbabe16aa6014af87c33">
         <dex dex="D:\wangzhixin\RongheSDK\rongsdk\demo_rong\build\intermediates\pre-dexed\debug\classes_a05f46ade133706a646974b873cb622743e6534d.jar" />
     </item>
 

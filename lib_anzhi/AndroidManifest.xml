@@ -70,6 +70,7 @@
             android:name="com.anzhi.sdk.middle.manage.AgencyActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:launchMode="singleTask"
+            android:screenOrientation="landscape"
             android:theme="@style/anzhi_sdk_style"
             android:windowSoftInputMode="adjustNothing">
             <intent-filter>
@@ -87,12 +88,13 @@
             android:name="com.ipaynow.qqpay.plugin.ipview.QQPayAndNotifyView"
             android:configChanges="keyboardHidden|navigation|orientation|screenSize"
             android:exported="false"
-            android:screenOrientation="behind"
+            android:screenOrientation="landscape"
             android:theme="@android:style/Theme.Dialog"></activity>
         <activity
             android:name="com.anzhi.market.ui.CorpBitmapActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:hardwareAccelerated="false"
+            android:screenOrientation="landscape"
             android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen" />
 
         <service
@@ -119,7 +121,7 @@
         <activity
             android:name="com.ipaynow.wechatpay.plugin.inner_plugin.wechat_plugin.activity.WeChatNotifyActivity"
             android:configChanges="orientation|keyboardHidden|keyboard|smallestScreenSize|locale|screenLayout|screenSize"
-            android:screenOrientation="nosensor"
+            android:screenOrientation="landscape"
             android:theme="@android:style/Theme.Translucent"></activity>
 
         <uses-library
@@ -128,27 +130,32 @@
 
         <activity
             android:name="com.unionpay.uppay.PayActivity"
+            android:screenOrientation="landscape"
             android:configChanges="keyboardHidden|orientation|screenSize"></activity>
         <activity
             android:name="com.alipay.sdk.app.H5PayActivity"
+            android:screenOrientation="landscape"
             android:configChanges="orientation|keyboardHidden|navigation"
             android:exported="false"
-            android:screenOrientation="behind"></activity>
+            ></activity>
         <activity
             android:name="com.alipay.sdk.app.H5AuthActivity"
             android:configChanges="orientation|keyboardHidden|navigation"
             android:exported="false"
-            android:screenOrientation="behind"></activity>
+            android:screenOrientation="landscape"></activity>
         <activity
             android:name="com.arcsoft.hpay100.HPaySdkActivity"
             android:configChanges="keyboardHidden|screenSize|orientation"
+            android:screenOrientation="landscape"
             android:theme="@style/hpay_dialog_style"></activity>
         <activity
             android:name="com.arcsoft.hpay100.web.HPayWebActivity"
             android:configChanges="keyboardHidden|screenSize|orientation"
+            android:screenOrientation="landscape"
             android:theme="@style/hpay_custom_confim_dialog"></activity>
         <activity
             android:name="com.arcsoft.hpay100.web.HPayWebFullActivity"
+            android:screenOrientation="landscape"
             android:configChanges="keyboardHidden|screenSize|orientation"></activity>
 
         <receiver android:name="com.anzhi.sdk.middle.manage.CommReceiver">
