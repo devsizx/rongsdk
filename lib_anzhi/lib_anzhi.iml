@@ -83,7 +83,6 @@
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/res" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/rs" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/shaders" />
-      <excludeFolder url="file://$MODULE_DIR$/build/intermediates/symbols" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/transforms" />
       <excludeFolder url="file://$MODULE_DIR$/build/outputs" />
       <excludeFolder url="file://$MODULE_DIR$/build/tmp" />
@@ -93,6 +92,7 @@
     <orderEntry type="library" exported="" name="fastjson-1.1.33" level="project" />
     <orderEntry type="library" exported="" name="UPPayAssistEx" level="project" />
     <orderEntry type="library" exported="" name="ipaynow_onlywechat_v2.0.3" level="project" />
+    <orderEntry type="library" exported="" name="mzw_onlinesdk_3381" level="project" />
     <orderEntry type="library" exported="" name="android-support-v13" level="project" />
     <orderEntry type="library" exported="" name="anzhipayjar" level="project" />
     <orderEntry type="library" exported="" name="UPPayPluginExPro" level="project" />

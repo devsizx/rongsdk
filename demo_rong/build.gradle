@@ -1,7 +1,7 @@
 apply plugin: 'android'
 
 dependencies {
-    compile project(':lib_mzw')
+    compile project(':lib_anzhi')
 }
 
 android {

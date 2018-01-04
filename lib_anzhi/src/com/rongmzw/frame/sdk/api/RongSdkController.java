@@ -8,29 +8,35 @@ import android.util.Log;
 import com.anzhi.sdk.middle.manage.AnzhiSDK;
 import com.anzhi.sdk.middle.manage.GameCallBack;
 import com.anzhi.sdk.middle.util.MD5;
+import com.google.gson.Gson;
+import com.muzhiwan.sdk.core.MzwSdkController;
+import com.muzhiwan.sdk.core.callback.MzwInitCallback;
+import com.muzhiwan.sdk.core.callback.MzwLoignCallback;
+import com.rongmzw.frame.sdk.callback.HttpCallback;
 import com.rongmzw.frame.sdk.callback.RongCallback;
-import com.rongmzw.frame.sdk.domain.RongGameInfo;
-import com.rongmzw.frame.sdk.domain.RongOrder;
+import com.rongmzw.frame.sdk.constants.RongConstants;
+import com.rongmzw.frame.sdk.domain.http.InitResponse;
+import com.rongmzw.frame.sdk.domain.local.RongGameInfo;
+import com.rongmzw.frame.sdk.domain.local.RongOrder;
+import com.rongmzw.frame.sdk.impl.RongSdkRequest;
 import com.rongmzw.frame.sdk.util.Des3Util;
-import com.zhy.http.okhttp.OkHttpUtils;
-import com.zhy.http.okhttp.callback.StringCallback;
 
 import org.json.JSONException;
 import org.json.JSONObject;
-
-import okhttp3.Call;
 
 /**
  * Created by Administrator on 2017/12/13.
  */
 
-public class RongSdkController implements RongSdkApi, RongSdkRequestApi {
+public class RongSdkController extends RongSdkRequest implements RongSdkApi {
     private static String TAG = RongSdkController.class.getSimpleName();
-    private String Appkey = "1378375366Az26xatNyDOD5EM6D2ys";// SDK 初始化参数
-    private String AppSecret = "ug2KMdLi2JSr4naOE48XmL3h";
+    private String appkey = "11111";// SDK 初始化参数
+    private String appSecret = "1111";
     private Activity gameActivity;
     private AnzhiSDK anzhiSDK = AnzhiSDK.getInstance();
+    private MzwSdkController mzwSdkController = MzwSdkController.getInstance();
     private RongCallback rongCallback;
+    private InitResponse initResponse = null;
     /**
      * 游戏屏幕方向设置，由厂商传入，ORIENTATION_HORIZONTAL代表横屏，ORIENTATION_VERTICAL代表竖屏
      **/
@@ -90,7 +96,7 @@ public class RongSdkController implements RongSdkApi, RongSdkRequestApi {
         }
     };
 
-    private static class MzwSdkControllerHolder {
+    private static class RongSdkControllerHolder {
         private static final RongSdkController INSTANCE = new RongSdkController();
     }
 
@@ -103,22 +109,55 @@ public class RongSdkController implements RongSdkApi, RongSdkRequestApi {
      * @return 控制器实例
      */
     public static RongSdkController getInstance() {
-        return MzwSdkControllerHolder.INSTANCE;
+        return RongSdkControllerHolder.INSTANCE;
     }
 
     @Override
-    public void callInit(Activity gameActivity, int screenOrientation, RongCallback rongCallback) {
-        Log.e(TAG, "anzhi callInit......");
-        initRequest();
+    public void callInit(final Activity gameActivity, final int screenOrientation, final RongCallback rongCallback) {
         this.gameActivity = gameActivity;
         this.rongCallback = rongCallback;
-        anzhiSDK.init(gameActivity, Appkey, AppSecret, callback);
+        initRequest(gameActivity, new HttpCallback() {
+            @Override
+            public void onSuccess(String type, String msg) {
+                Gson gson = new Gson();
+                initResponse = gson.fromJson(msg, InitResponse.class);
+                if (initResponse.getData().getSwitchX() == RongConstants.SWITCH) {
+                    Log.e(TAG, "mzw callInit......");
+                    mzwSdkController.init(gameActivity, screenOrientation, new MzwInitCallback() {
+                        @Override
+                        public void onResult(int i, String s) {
+                            rongCallback.onResult(RongCallback.TYPE_INIT, i, s);
+                        }
+                    });
+                } else {
+                    Log.e(TAG, "anzhi callInit......");
+                    appkey = initResponse.getData().getParams().getAppkey();
+                    appSecret = initResponse.getData().getParams().getSecret();
+                    anzhiSDK.init(gameActivity, appkey, appSecret, callback);
+                }
+            }
+
+            @Override
+            public void onFailed(String type, String msg) {
+                rongCallback.onResult(RongCallback.TYPE_INIT, 0, "init failed...");
+            }
+        });
     }
 
     @Override
     public void callLogin() {
-        Log.e(TAG, "anzhi callLogin......");
-        anzhiSDK.login(this.gameActivity);
+        if (initResponse.getData().getSwitchX() == RongConstants.SWITCH) {
+            Log.e(TAG, "mzw callLogin......");
+            mzwSdkController.doLogin(new MzwLoignCallback() {
+                @Override
+                public void onResult(int i, String s) {
+                    rongCallback.onResult(RongCallback.TYPE_LOGIN, i, s);
+                }
+            });
+        } else {
+            Log.e(TAG, "anzhi callLogin......");
+            anzhiSDK.login(this.gameActivity);
+        }
     }
 
     @Override
@@ -138,7 +177,7 @@ public class RongSdkController implements RongSdkApi, RongSdkRequestApi {
             e.printStackTrace();
         }
         String data = json.toString();
-        anzhiSDK.pay(Des3Util.encrypt(data, AppSecret), MD5.encodeToString(AppSecret));
+        anzhiSDK.pay(Des3Util.encrypt(data, appSecret), MD5.encodeToString(appSecret));
     }
 
     @Override
@@ -200,50 +239,4 @@ public class RongSdkController implements RongSdkApi, RongSdkRequestApi {
         Log.e(TAG, "anzhi callExitGame......");
         anzhiSDK.exitGame(this.gameActivity);
     }
-
-    @Override
-    public void initRequest() {
-        OkHttpUtils.get().url("http://www.baidu.com").build().execute(new StringCallback() {
-            @Override
-            public void onError(Call call, Exception e, int id) {
-
-            }
-
-            @Override
-            public void onResponse(String response, int id) {
-                Log.e(TAG, response.toString());
-            }
-        });
-    }
-
-    @Override
-    public void loginRequest() {
-        OkHttpUtils.get().url("http://www.baidu.com").build().execute(new StringCallback() {
-            @Override
-            public void onError(Call call, Exception e, int id) {
-
-            }
-
-            @Override
-            public void onResponse(String response, int id) {
-                Log.e(TAG, response.toString());
-            }
-        });
-    }
-
-    @Override
-    public void payRequest() {
-        OkHttpUtils.get().url("http://www.baidu.com").build().execute(new StringCallback() {
-            @Override
-            public void onError(Call call, Exception e, int id) {
-
-            }
-
-            @Override
-            public void onResponse(String response, int id) {
-                Log.e(TAG, response.toString());
-            }
-        });
-    }
-
 }

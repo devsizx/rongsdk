@@ -30,11 +30,20 @@
     </item>
     <item
         is-multidex="false"
+        jar="D:\wangzhixin\RongheSDK\rongsdk\lib_anzhi\build\intermediates\bundles\default\libs\mzw_onlinesdk_3381.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="7526e0326791b4e09f8de5be34f04dcae9f06848">
+        <dex dex="D:\wangzhixin\RongheSDK\rongsdk\demo_rong\build\intermediates\pre-dexed\debug\mzw_onlinesdk_3381_f466124b77b7e7d5ddb03dab255bdf1d0a32cfd3.jar" />
+    </item>
+    <item
+        is-multidex="false"
         jar="D:\wangzhixin\RongheSDK\rongsdk\lib_anzhi\build\intermediates\bundles\default\classes.jar"
         jumboMode="false"
         optimize="true"
         revision="25.0.0"
-        sha1="d9fcf978f737e74aea6f339d93f93f2122f3fdec">
+        sha1="5fce3d2b564343a906af7bf6b5a6130532eb1570">
         <dex dex="D:\wangzhixin\RongheSDK\rongsdk\demo_rong\build\intermediates\pre-dexed\debug\classes_ded12d316a3c440c00ac8ba97c9aa94dec582a09.jar" />
     </item>
     <item
@@ -241,7 +250,7 @@
         jumboMode="false"
         optimize="true"
         revision="25.0.0"
-        sha1="954a0a06a8c121ef0b14dbabe16aa6014af87c33">
+        sha1="078ed3c471cfe36808ce39ea7ce6065af397d7d1">
         <dex dex="D:\wangzhixin\RongheSDK\rongsdk\demo_rong\build\intermediates\pre-dexed\debug\classes_a05f46ade133706a646974b873cb622743e6534d.jar" />
     </item>
 

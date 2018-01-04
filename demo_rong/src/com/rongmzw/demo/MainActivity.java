@@ -20,8 +20,8 @@ import android.widget.Toast;
 
 import com.rongmzw.frame.sdk.api.RongSdkController;
 import com.rongmzw.frame.sdk.callback.RongCallback;
-import com.rongmzw.frame.sdk.domain.RongGameInfo;
-import com.rongmzw.frame.sdk.domain.RongOrder;
+import com.rongmzw.frame.sdk.domain.local.RongGameInfo;
+import com.rongmzw.frame.sdk.domain.local.RongOrder;
 
 public class MainActivity extends Activity implements View.OnClickListener {
     private static String TAG = MainActivity.class.getName();

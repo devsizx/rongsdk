@@ -11,8 +11,8 @@ import com.iqiyi.sdk.platform.GamePlatformInitListener;
 import com.iqiyi.sdk.platform.GameSDKResultCode;
 import com.iqiyi.sdk.platform.GameUser;
 import com.rongmzw.frame.sdk.callback.RongCallback;
-import com.rongmzw.frame.sdk.domain.RongGameInfo;
-import com.rongmzw.frame.sdk.domain.RongOrder;
+import com.rongmzw.frame.sdk.domain.local.RongGameInfo;
+import com.rongmzw.frame.sdk.domain.local.RongOrder;
 
 import org.json.JSONException;
 import org.json.JSONObject;

@@ -4,25 +4,31 @@ import android.app.Activity;
 import android.content.Intent;
 import android.util.Log;
 
+import com.google.gson.Gson;
 import com.muzhiwan.sdk.core.MzwSdkController;
 import com.muzhiwan.sdk.core.callback.MzwInitCallback;
 import com.muzhiwan.sdk.core.callback.MzwLoignCallback;
 import com.muzhiwan.sdk.core.callback.MzwPayCallback;
 import com.muzhiwan.sdk.core.callback.MzwStaPayCallback;
 import com.muzhiwan.sdk.service.MzwOrder;
+import com.rongmzw.frame.sdk.callback.HttpCallback;
 import com.rongmzw.frame.sdk.callback.RongCallback;
-import com.rongmzw.frame.sdk.domain.RongGameInfo;
-import com.rongmzw.frame.sdk.domain.RongOrder;
+import com.rongmzw.frame.sdk.constants.RongConstants;
+import com.rongmzw.frame.sdk.domain.http.InitResponse;
+import com.rongmzw.frame.sdk.domain.local.RongGameInfo;
+import com.rongmzw.frame.sdk.domain.local.RongOrder;
+import com.rongmzw.frame.sdk.impl.RongSdkRequest;
 
 /**
  * Created by Administrator on 2017/12/13.
  */
 
-public class RongSdkController implements RongSdkApi {
+public class RongSdkController extends RongSdkRequest implements RongSdkApi {
     private static String TAG = RongSdkController.class.getSimpleName();
     private MzwSdkController mzwSdkController = MzwSdkController.getInstance();
     private Activity gameActivity;
     private RongCallback rongCallback;
+    private InitResponse initResponse = null;
     /**
      * 游戏屏幕方向设置，由厂商传入，ORIENTATION_HORIZONTAL代表横屏，ORIENTATION_VERTICAL代表竖屏
      **/
@@ -32,7 +38,7 @@ public class RongSdkController implements RongSdkApi {
      **/
     public static final int ORIENTATION_VERTICAL = 1;
 
-    private static class MzwSdkControllerHolder {
+    private static class RongSdkControllerHolder {
         private static final RongSdkController INSTANCE = new RongSdkController();
     }
 
@@ -45,20 +51,35 @@ public class RongSdkController implements RongSdkApi {
      * @return 控制器实例
      */
     public static RongSdkController getInstance() {
-        return MzwSdkControllerHolder.INSTANCE;
+        return RongSdkControllerHolder.INSTANCE;
     }
 
     @Override
-    public void callInit(Activity gameActivity, int screenOrientation, final RongCallback rongCallback) {
+    public void callInit(final Activity gameActivity, final int screenOrientation, final RongCallback rongCallback) {
         Log.e(TAG, "mzw callInit......");
         this.gameActivity = gameActivity;
         this.rongCallback = rongCallback;
-        mzwSdkController.init(this.gameActivity, screenOrientation, new MzwInitCallback() {
+        initRequest(gameActivity, new HttpCallback() {
             @Override
-            public void onResult(int i, String s) {
-                rongCallback.onResult(RongCallback.TYPE_INIT, i, s);
+            public void onSuccess(String type, String msg) {
+                Gson gson = new Gson();
+                initResponse = gson.fromJson(msg, InitResponse.class);
+                if (initResponse.getData().getSwitchX() == RongConstants.SWITCH) {
+                    mzwSdkController.init(gameActivity, screenOrientation, new MzwInitCallback() {
+                        @Override
+                        public void onResult(int i, String s) {
+                            rongCallback.onResult(RongCallback.TYPE_INIT, i, s);
+                        }
+                    });
+                }
+            }
+
+            @Override
+            public void onFailed(String type, String msg) {
+                rongCallback.onResult(RongCallback.TYPE_INIT, 0, "init failed...");
             }
         });
+
     }
 
     @Override

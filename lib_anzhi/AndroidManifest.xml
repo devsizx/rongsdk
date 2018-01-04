@@ -66,6 +66,8 @@
     <application android:allowBackup="true">
         <!-- ======从这里开始复制======================================= -->
         <!-- 支付界面的横竖屏显示方式可修改下面Activity的android:screenOrientation属性，其它属性切记不要修改！ -->
+
+
         <activity
             android:name="com.anzhi.sdk.middle.manage.AgencyActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"

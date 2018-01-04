@@ -4,8 +4,8 @@ import android.app.Activity;
 import android.content.Intent;
 
 import com.rongmzw.frame.sdk.callback.RongCallback;
-import com.rongmzw.frame.sdk.domain.RongGameInfo;
-import com.rongmzw.frame.sdk.domain.RongOrder;
+import com.rongmzw.frame.sdk.domain.local.RongGameInfo;
+import com.rongmzw.frame.sdk.domain.local.RongOrder;
 
 /**
  * Created by Administrator on 2017/12/19.

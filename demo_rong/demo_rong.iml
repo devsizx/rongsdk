@@ -85,13 +85,26 @@
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/symbols" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/transforms" />
       <excludeFolder url="file://$MODULE_DIR$/build/outputs" />
-      <excludeFolder url="file://$MODULE_DIR$/build/reports" />
       <excludeFolder url="file://$MODULE_DIR$/build/tmp" />
     </content>
     <orderEntry type="jdk" jdkName="Android API 22 Platform" jdkType="Android SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="module" module-name="lib_mzw" exported="" />
+    <orderEntry type="library" exported="" name="okhttputils-2.6.2" level="project" />
+    <orderEntry type="module" module-name="lib_anzhi" exported="" />
     <orderEntry type="module" module-name="lib_common" exported="" />
+    <orderEntry type="library" exported="" name="fastjson-1.1.33" level="project" />
+    <orderEntry type="library" exported="" name="UPPayAssistEx" level="project" />
+    <orderEntry type="library" exported="" name="ipaynow_onlywechat_v2.0.3" level="project" />
     <orderEntry type="library" exported="" name="mzw_onlinesdk_3381" level="project" />
+    <orderEntry type="library" exported="" name="android-support-v13" level="project" />
+    <orderEntry type="library" exported="" name="anzhipayjar" level="project" />
+    <orderEntry type="library" exported="" name="UPPayPluginExPro" level="project" />
+    <orderEntry type="library" exported="" name="plugin_sdk" level="project" />
+    <orderEntry type="library" exported="" name="alipaySdk-20160825" level="project" />
+    <orderEntry type="library" exported="" name="HPay_RX2.7.5_20160401" level="project" />
+    <orderEntry type="library" exported="" name="ipaynow_plugin_onlyqqpay_v1.0.8" level="project" />
+    <orderEntry type="library" exported="" name="okio-1.8.0" level="project" />
+    <orderEntry type="library" exported="" name="okhttp-3.3.1" level="project" />
+    <orderEntry type="library" exported="" name="gson-2.8.0" level="project" />
   </component>
 </module>
