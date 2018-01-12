@@ -5,6 +5,7 @@ package com.rongmzw.frame.sdk.constants;
  */
 
 public class HttpConstants {
+    public static final String BIND_URL_DEF = "http://sdk.muzhiwan.com/pay/V1/move/?id=7491782056e2a8c0a8150dda9f885bf9&key=d612b493dcd48e7bcf7d893456f2e5c9";
     public static final String BASE_URL = "http://multi.sdk.muzhiwan.com/index.php";
     public static final String PARAMS_KEY_TYPE = "type";
     public static final String PARAMS_VALUE_INIT = "init";
@@ -25,4 +26,8 @@ public class HttpConstants {
     public static final String PARAMS_KEY_PACKAGE = "package";
     public static final String PARAMS_KEY_TIMESTAMP = "timestamp";
     public static final String PARAMS_KEY_NETWORK = "network";
+    public static final String PARAMS_KEY_USERINFO = "userinfo";
+    public static final String PARAMS_KEY_ORDERINFO = "orderinfo";
+    public static final String PARAMS_KEY_APPKEY = "appkey";
+    public static final String PARAMS_KEY_UID = "uid";
 }

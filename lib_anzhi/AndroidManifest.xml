@@ -132,14 +132,13 @@
 
         <activity
             android:name="com.unionpay.uppay.PayActivity"
-            android:screenOrientation="landscape"
-            android:configChanges="keyboardHidden|orientation|screenSize"></activity>
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:screenOrientation="landscape"></activity>
         <activity
             android:name="com.alipay.sdk.app.H5PayActivity"
-            android:screenOrientation="landscape"
             android:configChanges="orientation|keyboardHidden|navigation"
             android:exported="false"
-            ></activity>
+            android:screenOrientation="landscape"></activity>
         <activity
             android:name="com.alipay.sdk.app.H5AuthActivity"
             android:configChanges="orientation|keyboardHidden|navigation"
@@ -157,8 +156,8 @@
             android:theme="@style/hpay_custom_confim_dialog"></activity>
         <activity
             android:name="com.arcsoft.hpay100.web.HPayWebFullActivity"
-            android:screenOrientation="landscape"
-            android:configChanges="keyboardHidden|screenSize|orientation"></activity>
+            android:configChanges="keyboardHidden|screenSize|orientation"
+            android:screenOrientation="landscape"></activity>
 
         <receiver android:name="com.anzhi.sdk.middle.manage.CommReceiver">
             <intent-filter>
@@ -177,8 +176,5 @@
             android:value="true" />
         -->
         <!-- ======复制结束========================================================================= -->
-
     </application>
-
-
 </manifest>

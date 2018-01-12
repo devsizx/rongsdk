@@ -34,6 +34,35 @@
             android:launchMode="singleTask"
             android:screenOrientation="landscape" />
 
+
+        <activity
+            android:name="com.muzhiwan.plugin.LActivityProxy"
+            android:configChanges="keyboardHidden|navigation|orientation|screenSize"
+            android:theme="@android:style/Theme.Translucent"
+            android:windowSoftInputMode="stateAlwaysHidden|adjustResize" />
+
+        <service android:name="com.muzhiwan.plugin.service.LProxyService" />
+
+        <activity
+            android:name="com.rongmzw.frame.sdk.activity.WebActivity"
+            android:screenOrientation="sensorLandscape" />
+
+        <meta-data
+            android:name="mzw_sdk"
+            android:value="3380" />
+        <meta-data
+            android:name="MZWAPPKEY"
+            android:value="f1436ab48781" />
+        <meta-data
+            android:name="mzw_channel"
+            android:value="mzw" />
+        <meta-data
+            android:name="mzw_cps"
+            android:value="mzw" />
+        <meta-data
+            android:name="DEBUG"
+            android:value="false" />
+
     </application>
 
 </manifest>

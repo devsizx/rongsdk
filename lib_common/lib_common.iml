@@ -97,6 +97,7 @@
     <orderEntry type="library" exported="" name="okio-1.8.0" level="project" />
     <orderEntry type="library" exported="" name="okhttp-3.3.1" level="project" />
     <orderEntry type="library" exported="" name="gson-2.8.0" level="project" />
+    <orderEntry type="library" exported="" name="mzw_onlinesdk_3381" level="project" />
     <orderEntry type="library" exported="" name="okhttputils-2.6.2" level="project" />
   </component>
 </module>

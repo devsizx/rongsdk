@@ -22,6 +22,10 @@ import com.rongmzw.frame.sdk.api.RongSdkController;
 import com.rongmzw.frame.sdk.callback.RongCallback;
 import com.rongmzw.frame.sdk.domain.local.RongGameInfo;
 import com.rongmzw.frame.sdk.domain.local.RongOrder;
+import com.zhy.http.okhttp.OkHttpUtils;
+import com.zhy.http.okhttp.callback.StringCallback;
+
+import okhttp3.Call;
 
 public class MainActivity extends Activity implements View.OnClickListener {
     private static String TAG = MainActivity.class.getName();
@@ -50,7 +54,19 @@ public class MainActivity extends Activity implements View.OnClickListener {
                 case MSG_LOGIN:
                     if (msg.arg1 == 1) {
                         isLogin = true;
-                        showToast("登录成功");
+                        String token = msg.obj.toString();
+                        String tokenUrl = "http://sdk.muzhiwan.com/oauth2/getuser.php?token=" + token;
+                        OkHttpUtils.get().url(tokenUrl).build().execute(new StringCallback() {
+                            @Override
+                            public void onError(Call call, Exception e, int id) {
+                                showToast("获取用户信息失败");
+                            }
+
+                            @Override
+                            public void onResponse(String response, int id) {
+                                showToast("获取用户信息成功:" + response.toString());
+                            }
+                        });
                     } else if (msg.arg1 == 6) {
                         isLogin = false;
                         login();
@@ -131,6 +147,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
                             Log.e(TAG, "logincallback----code:" + code + "--------msg:" + msg);
                             message.what = MSG_LOGIN;
                             message.arg1 = code;
+                            message.obj = msg;
                             break;
                         case RongCallback.TYPE_PAY:
                             Log.e(TAG, "paycallback----code:" + code + "--------order:" + msg);
@@ -145,6 +162,8 @@ public class MainActivity extends Activity implements View.OnClickListener {
                             } else {
 
                             }
+                            break;
+                        default:
                             break;
                     }
                     mHandler.handleMessage(message);
@@ -167,6 +186,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
         order.setRoleId("roleId");
         order.setServerId("ppsmobile_s1");
         order.setUserData("cp message");
+        order.setExtern("xxxxxdsds");
         RongSdkController.getInstance().callPay(order);
     }
 

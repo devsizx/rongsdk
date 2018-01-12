@@ -9,6 +9,7 @@ public class RongOrder {
     private String roleId;//角色id
     private String serverId;//服务器id
     private String userData;//用户信息
+    private String extern;//扩展字段
 
     public String getProductId() {
         return productId;
@@ -72,6 +73,14 @@ public class RongOrder {
 
     public void setUserData(String userData) {
         this.userData = userData;
+    }
+
+    public String getExtern() {
+        return extern;
+    }
+
+    public void setExtern(String extern) {
+        this.extern = extern;
     }
 
     @Override

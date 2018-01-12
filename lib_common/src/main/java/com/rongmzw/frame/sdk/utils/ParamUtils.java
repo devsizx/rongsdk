@@ -3,6 +3,7 @@ package com.rongmzw.frame.sdk.utils;
 import android.content.Context;
 import android.os.Build;
 
+import com.muzhiwan.sdk.common.utils.MzwSDKManagerUtils;
 import com.rongmzw.frame.sdk.constants.HttpConstants;
 
 import java.util.HashMap;
@@ -27,6 +28,7 @@ public class ParamUtils {
         params.put(HttpConstants.PARAMS_KEY_WIDTH, String.valueOf(OSInfoManagerUtils.getScreenWidth(context)));
         params.put(HttpConstants.PARAMS_KEY_HEIGHT, String.valueOf(OSInfoManagerUtils.getScreenHeight(context)));
         params.put(HttpConstants.PARAMS_KEY_NETWORK, network);
+        params.put(HttpConstants.PARAMS_KEY_APPKEY, MzwSDKManagerUtils.getAppKey(context));
         params.put(HttpConstants.PARAMS_KEY_TIMESTAMP, String.valueOf(System.currentTimeMillis() / 1000));
         return params;
     }

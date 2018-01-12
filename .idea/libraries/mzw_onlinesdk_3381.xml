@@ -1,7 +1,7 @@
 <component name="libraryTable">
   <library name="mzw_onlinesdk_3381">
     <CLASSES>
-      <root url="jar://$PROJECT_DIR$/lib_anzhi/libs/mzw_onlinesdk_3381.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib_common/lib/mzw_onlinesdk_3381.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

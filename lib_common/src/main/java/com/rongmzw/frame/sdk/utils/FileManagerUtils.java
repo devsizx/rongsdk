@@ -16,25 +16,8 @@ public class FileManagerUtils {
         if (existSDCard(context)) {
             return Environment.getExternalStorageDirectory().getAbsolutePath() + "/";
         } else {
-            return Environment.getRootDirectory() + "/mzwsdk/";
+            return Environment.getRootDirectory() + "/rongsdk/";
         }
-    }
-
-    // 删除文件夹及子文件
-    public static boolean deleteFile(File file) {
-        if (file.exists()) {
-            if (file.isDirectory()) {
-                File[] files = file.listFiles();
-                if (files != null) {
-                    for (int i = 0; i < files.length; i++) {
-                        deleteFile(files[i]);
-                    }
-                }
-            } else {
-                file.delete();
-            }
-        }
-        return true;
     }
 
     // 判断SD卡是否存在 判断应用是否加入了sd读写的权限 以及 sd卡是否挂载

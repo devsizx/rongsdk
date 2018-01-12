@@ -5,14 +5,33 @@ import android.os.Bundle;
 import android.util.Log;
 import android.webkit.WebView;
 
+import com.muzhiwan.sdk.common.utils.StringManagerUtils;
+import com.rongmzw.frame.sdk.callback.RongCallBackUtils;
+
 public class WebActivity extends Activity {
+    private String url = "";
+    private String token = "";
+    private String mzwId = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Log.e("wzx", "webActivity  onCreate  method...");
+        url = getIntent().getStringExtra("url");
+        token = getIntent().getStringExtra("token");
+        mzwId = getIntent().getStringExtra("mzwId");
         WebView webView = new WebView(this);
         setContentView(webView);
-        webView.loadUrl("http://sdk.muzhiwan.com/pay/V1/move/?id=7491782056e2a8c0a8150dda9f885bf9&key=d612b493dcd48e7bcf7d893456f2e5c9");
+
+        if (!StringManagerUtils.isNull(mzwId)) {
+            url += "?mzwid=" + mzwId;
+        }
+        webView.loadUrl(url);
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        RongCallBackUtils.loginSuccessCallBack(token);
     }
 }

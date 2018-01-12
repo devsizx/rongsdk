@@ -7,12 +7,11 @@ import com.google.gson.annotations.SerializedName;
  */
 
 public class InitResponse {
-
     /**
-     * data : {"switch":0,"apilevel":0,"params":{"appkey":"a49e9411d64ff53eccfdd09ad10a15b3","secret":"3ad7c2ebb96fcba7cda0cf54a2e802f5"}}
+     * data : {"switch":0,"apilevel":0,"bindurl":"http://sdk.muzhiwan.com/pay/V1/move/?id=6268bc958aac428dfc6e93216708354f&key=6b70c8a75142e26ea8192ac9939a57cb","params":{"appkey":"1378375366Az26xatNyDOD5EM6D2ys","secret":"ug2KMdLi2JSr4naOE48XmL3h"}}
      * err_no : 200
      * err_msg :
-     * time : 1515030833
+     * time : 1515396337
      */
 
     private DataBean data;
@@ -56,12 +55,14 @@ public class InitResponse {
         /**
          * switch : 0
          * apilevel : 0
-         * params : {"appkey":"a49e9411d64ff53eccfdd09ad10a15b3","secret":"3ad7c2ebb96fcba7cda0cf54a2e802f5"}
+         * bindurl : http://sdk.muzhiwan.com/pay/V1/move/?id=6268bc958aac428dfc6e93216708354f&key=6b70c8a75142e26ea8192ac9939a57cb
+         * params : {"appkey":"1378375366Az26xatNyDOD5EM6D2ys","secret":"ug2KMdLi2JSr4naOE48XmL3h"}
          */
 
         @SerializedName("switch")
         private int switchX;
         private int apilevel;
+        private String bindurl;
         private ParamsBean params;
 
         public int getSwitchX() {
@@ -80,6 +81,14 @@ public class InitResponse {
             this.apilevel = apilevel;
         }
 
+        public String getBindurl() {
+            return bindurl;
+        }
+
+        public void setBindurl(String bindurl) {
+            this.bindurl = bindurl;
+        }
+
         public ParamsBean getParams() {
             return params;
         }
@@ -90,8 +99,8 @@ public class InitResponse {
 
         public static class ParamsBean {
             /**
-             * appkey : a49e9411d64ff53eccfdd09ad10a15b3
-             * secret : 3ad7c2ebb96fcba7cda0cf54a2e802f5
+             * appkey : 1378375366Az26xatNyDOD5EM6D2ys
+             * secret : ug2KMdLi2JSr4naOE48XmL3h
              */
 
             private String appkey;

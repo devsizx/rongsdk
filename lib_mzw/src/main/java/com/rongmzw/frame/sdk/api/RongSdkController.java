@@ -11,7 +11,7 @@ import com.muzhiwan.sdk.core.callback.MzwLoignCallback;
 import com.muzhiwan.sdk.core.callback.MzwPayCallback;
 import com.muzhiwan.sdk.core.callback.MzwStaPayCallback;
 import com.muzhiwan.sdk.service.MzwOrder;
-import com.rongmzw.frame.sdk.callback.HttpCallback;
+import com.rongmzw.frame.sdk.callback.RongHttpCallback;
 import com.rongmzw.frame.sdk.callback.RongCallback;
 import com.rongmzw.frame.sdk.constants.RongConstants;
 import com.rongmzw.frame.sdk.domain.http.InitResponse;
@@ -59,7 +59,7 @@ public class RongSdkController extends RongSdkRequest implements RongSdkApi {
         Log.e(TAG, "mzw callInit......");
         this.gameActivity = gameActivity;
         this.rongCallback = rongCallback;
-        initRequest(gameActivity, new HttpCallback() {
+        initRequest(gameActivity, new RongHttpCallback() {
             @Override
             public void onSuccess(String type, String msg) {
                 Gson gson = new Gson();
