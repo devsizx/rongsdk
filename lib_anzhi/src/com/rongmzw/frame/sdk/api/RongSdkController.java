@@ -73,8 +73,9 @@ public class RongSdkController extends RongSdkRequest implements RongSdkApi {
                                         String token = loginResponse.getData().getToken();
                                         String url = initResponse.getData().getBindurl();
                                         String mzwid = loginResponse.getData().getMzwid();
+                                        LocalSpfManagerUtils.putStringShared(gameActivity, RongConstants.RONG_SPF_NAME, RongConstants.RONG_SPF_KEY_BINDURL, url);
                                         LocalSpfManagerUtils.putStringShared(gameActivity, RongConstants.RONG_SPF_NAME, RongConstants.RONG_SPF_KEY_MZWID, mzwid);
-                                        if (initResponse.getData().getSwitchX() != RongConstants.SWITCH_NORMAL && loginResponse.getData().getBind() == RongConstants.BIND) {
+                                        if (initResponse.getData().getSwitchX() != RongConstants.SWITCH_NORMAL) {
                                             Intent intent = new Intent(gameActivity, WebActivity.class);
                                             intent.putExtra("token", token);
                                             intent.putExtra("url", url);
@@ -200,40 +201,44 @@ public class RongSdkController extends RongSdkRequest implements RongSdkApi {
                 }
             });
         } else {
-            Log.e(TAG, "anzhi callPay......rongMzwOrder--->" + rongMzwOrder);
-            final String productId = rongMzwOrder.getProductId();
-            final String productName = rongMzwOrder.getProductName();
-            final String productDesc = rongMzwOrder.getProductDesc();
-            final String extern = rongMzwOrder.getExtern();
-            final int productPrice = rongMzwOrder.getProductPrice();
-            final String orderInfo = "{\"productid\":\"" + productId + "\",\"subject\":\"" + productName + "\",\"productdesc\":\"" + productDesc + "\",\"amount\":\"" + productPrice + "\",\"extern\":\"" + extern + "\"}";
-            payRequest(gameActivity, orderInfo, new RongHttpCallback() {
-                @Override
-                public void onSuccess(String type, String msg) {
-                    payResponse = gson.fromJson(msg.toString(), PayResponse.class);
-                    JSONObject json = new JSONObject();
-                    try {
-                        // 游戏方生成的订单号,可以作为与安智订单进行关联
-                        json.put("amount", payResponse.getData().getAmount());// 支付金额(单位：分)
-                        json.put("productCode", productId);// 游戏方商品代码
-                        json.put("productName", productName);// 游戏方商品名称
-                        json.put("cpCustomInfo", productDesc);// 游戏方自定义数据
-                        json.put("productCount", 1);// 商品数量
-                        json.put("cpOrderId", payResponse.getData().getOrder_no());
-                        Log.e("wangzhixin", payResponse.getData().getOrder_no().substring(6));
-                        json.put("cpOrderTime", payResponse.getData().getOrder_no().substring(6));// 下单时间
-                    } catch (JSONException e) {
-                        e.printStackTrace();
+            if (initResponse.getData().getApilevel() == 0) {
+                Log.e(TAG, "anzhi callPay......rongMzwOrder--->" + rongMzwOrder);
+                final String productId = rongMzwOrder.getProductId();
+                final String productName = rongMzwOrder.getProductName();
+                final String productDesc = rongMzwOrder.getProductDesc();
+                final String extern = rongMzwOrder.getExtern();
+                final int productPrice = rongMzwOrder.getProductPrice();
+                final String orderInfo = "{\"productid\":\"" + productId + "\",\"subject\":\"" + productName + "\",\"productdesc\":\"" + productDesc + "\",\"amount\":\"" + productPrice + "\",\"extern\":\"" + extern + "\"}";
+                payRequest(gameActivity, orderInfo, new RongHttpCallback() {
+                    @Override
+                    public void onSuccess(String type, String msg) {
+                        payResponse = gson.fromJson(msg.toString(), PayResponse.class);
+                        JSONObject json = new JSONObject();
+                        try {
+                            // 游戏方生成的订单号,可以作为与安智订单进行关联
+                            json.put("amount", payResponse.getData().getAmount());// 支付金额(单位：分)
+                            json.put("productCode", productId);// 游戏方商品代码
+                            json.put("productName", productName);// 游戏方商品名称
+                            json.put("cpCustomInfo", productDesc);// 游戏方自定义数据
+                            json.put("productCount", 1);// 商品数量
+                            json.put("cpOrderId", payResponse.getData().getOrder_no());
+                            Log.e("wangzhixin", payResponse.getData().getOrder_no().substring(6));
+                            json.put("cpOrderTime", payResponse.getData().getOrder_no().substring(6));// 下单时间
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                        String data = json.toString();
+                        anzhiSDK.pay(Des3Util.encrypt(data, appSecret), MD5.encodeToString(appSecret));
                     }
-                    String data = json.toString();
-                    anzhiSDK.pay(Des3Util.encrypt(data, appSecret), MD5.encodeToString(appSecret));
-                }
 
-                @Override
-                public void onFailed(String type, String msg) {
-
-                }
-            });
+                    @Override
+                    public void onFailed(String type, String msg) {
+                        RongCallBackUtils.payFailedCallBack("network error");
+                    }
+                });
+            } else {
+                RongCallBackUtils.payFailedCallBack("current channel stop recharge function");
+            }
         }
     }
 

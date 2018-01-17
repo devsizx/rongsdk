@@ -57,6 +57,7 @@ public class RongSdkController implements RongSdkApi {
         Log.e(TAG, "iqiyi callInit......");
         this.gameActivity = gameActivity;
         this.rongCallback = rongCallback;
+
         iqiyiGamePlatform.initPlatform(this.gameActivity, gameId, new GamePlatformInitListener() {
             @Override
             public void onSuccess() {

@@ -2,7 +2,6 @@ package com.rongmzw.frame.sdk.activity;
 
 import android.app.Activity;
 import android.os.Bundle;
-import android.util.Log;
 import android.webkit.WebView;
 
 import com.muzhiwan.sdk.common.utils.StringManagerUtils;
@@ -16,10 +15,9 @@ public class WebActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        Log.e("wzx", "webActivity  onCreate  method...");
         url = getIntent().getStringExtra("url");
         token = getIntent().getStringExtra("token");
-        mzwId = getIntent().getStringExtra("mzwId");
+        mzwId = getIntent().getStringExtra("mzwid");
         WebView webView = new WebView(this);
         setContentView(webView);
 

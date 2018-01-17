@@ -36,6 +36,9 @@ public class MainActivity extends Activity implements View.OnClickListener {
     private boolean isLogin = false;
     private static final int MSG_INIT = 0x01;
     private static final int MSG_LOGIN = 0x02;
+    private static final int MSG_PAY = 0x03;
+    private static final int MSG_STAPAY = 0x04;
+    private static final int MSG_EXITGAME = 0x05;
     private Handler mHandler = new Handler() {
         @Override
         public void handleMessage(Message msg) {
@@ -77,6 +80,19 @@ public class MainActivity extends Activity implements View.OnClickListener {
                         isLogin = false;
                         showToast("登录失败");
                     }
+                    break;
+                case MSG_PAY:
+                    if (msg.arg1 == 0) {
+                        showToast("支付失败:" + msg.obj.toString());
+                    } else {
+                        showToast("支付成功");
+                    }
+                    break;
+                case MSG_STAPAY:
+                    break;
+                case MSG_EXITGAME:
+                    break;
+                default:
                     break;
             }
         }
@@ -151,6 +167,9 @@ public class MainActivity extends Activity implements View.OnClickListener {
                             break;
                         case RongCallback.TYPE_PAY:
                             Log.e(TAG, "paycallback----code:" + code + "--------order:" + msg);
+                            message.what = MSG_PAY;
+                            message.arg1 = code;
+                            message.obj = msg;
                             break;
                         case RongCallback.TYPE_STAPAY:
                             Log.e(TAG, "stapaycallback----code:" + code + "--------msg:" + msg);
@@ -180,7 +199,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
         order = new RongOrder();
         order.setProductPrice(Integer.parseInt(priceValue) == 0 ? 1 : Integer.parseInt(priceValue));
         order.setProductName("拇指玩测试商品" + ((int) (Math.random() * 10) + 1));
-        order.setProductDesc("成为拇指玩超级会员");
+        order.setProductDesc("拇指玩测试商品套餐");
         order.setProductOrderid("sssdf");
         order.setProductOrderid("dfdsf");
         order.setRoleId("roleId");

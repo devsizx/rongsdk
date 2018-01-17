@@ -4,16 +4,13 @@ import android.app.Activity;
 import android.content.Intent;
 import android.util.Log;
 
-import com.google.gson.Gson;
 import com.muzhiwan.sdk.core.MzwSdkController;
 import com.muzhiwan.sdk.core.callback.MzwInitCallback;
 import com.muzhiwan.sdk.core.callback.MzwLoignCallback;
 import com.muzhiwan.sdk.core.callback.MzwPayCallback;
 import com.muzhiwan.sdk.core.callback.MzwStaPayCallback;
 import com.muzhiwan.sdk.service.MzwOrder;
-import com.rongmzw.frame.sdk.callback.RongHttpCallback;
 import com.rongmzw.frame.sdk.callback.RongCallback;
-import com.rongmzw.frame.sdk.constants.RongConstants;
 import com.rongmzw.frame.sdk.domain.http.InitResponse;
 import com.rongmzw.frame.sdk.domain.local.RongGameInfo;
 import com.rongmzw.frame.sdk.domain.local.RongOrder;
@@ -59,27 +56,12 @@ public class RongSdkController extends RongSdkRequest implements RongSdkApi {
         Log.e(TAG, "mzw callInit......");
         this.gameActivity = gameActivity;
         this.rongCallback = rongCallback;
-        initRequest(gameActivity, new RongHttpCallback() {
+        mzwSdkController.init(gameActivity, screenOrientation, new MzwInitCallback() {
             @Override
-            public void onSuccess(String type, String msg) {
-                Gson gson = new Gson();
-                initResponse = gson.fromJson(msg, InitResponse.class);
-                if (initResponse.getData().getSwitchX() == RongConstants.SWITCH) {
-                    mzwSdkController.init(gameActivity, screenOrientation, new MzwInitCallback() {
-                        @Override
-                        public void onResult(int i, String s) {
-                            rongCallback.onResult(RongCallback.TYPE_INIT, i, s);
-                        }
-                    });
-                }
-            }
-
-            @Override
-            public void onFailed(String type, String msg) {
-                rongCallback.onResult(RongCallback.TYPE_INIT, 0, "init failed...");
+            public void onResult(int i, String s) {
+                rongCallback.onResult(RongCallback.TYPE_INIT, i, s);
             }
         });
-
     }
 
     @Override

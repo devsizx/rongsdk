@@ -16,7 +16,7 @@ public class FileManagerUtils {
         if (existSDCard(context)) {
             return Environment.getExternalStorageDirectory().getAbsolutePath() + "/";
         } else {
-            return Environment.getRootDirectory() + "/rongsdk/";
+            return Environment.getRootDirectory() + "/mzwsdk/";
         }
     }
 

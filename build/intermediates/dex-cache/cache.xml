@@ -34,7 +34,7 @@
         jumboMode="false"
         optimize="true"
         revision="25.0.0"
-        sha1="019f74e66c519af7b40df964f8651eb61aba9799">
+        sha1="f316cfa616bafffaf19fa24e515c5cfa9e42944c">
         <dex dex="D:\wangzhixin\RongheSDK\rongsdk\demo_rong\build\intermediates\pre-dexed\debug\classes_ded12d316a3c440c00ac8ba97c9aa94dec582a09.jar" />
     </item>
     <item
@@ -250,7 +250,7 @@
         jumboMode="false"
         optimize="true"
         revision="25.0.0"
-        sha1="89ea19827d68d8a4ad530b58142704e433c62b97">
+        sha1="4a1d9d7adbf15eb1bb6dc13c28ff40e38bad3693">
         <dex dex="D:\wangzhixin\RongheSDK\rongsdk\demo_rong\build\intermediates\pre-dexed\debug\classes_a05f46ade133706a646974b873cb622743e6534d.jar" />
     </item>
 

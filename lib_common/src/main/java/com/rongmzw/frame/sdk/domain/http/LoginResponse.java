@@ -53,12 +53,10 @@ public class LoginResponse {
         /**
          * token : 5d41402abc4b2a76b9719d911017c592
          * mzwid : 8832975
-         * bind : 0
          */
 
         private String token;
         private String mzwid;
-        private int bind;
 
         public String getToken() {
             return token;
@@ -74,14 +72,6 @@ public class LoginResponse {
 
         public void setMzwid(String mzwid) {
             this.mzwid = mzwid;
-        }
-
-        public int getBind() {
-            return bind;
-        }
-
-        public void setBind(int bind) {
-            this.bind = bind;
         }
     }
 }
