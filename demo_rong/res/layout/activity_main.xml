@@ -10,6 +10,27 @@
         android:orientation="vertical">
 
         <Button
+            android:id="@+id/reset_18564018"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:text="重置本地mzwid为18564018" />
+
+        <Button
+            android:id="@+id/reset_18563946"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:text="重置本地mzwid为18563946" />
+
+        <Button
+            android:id="@+id/reset_18564018and18563946"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:text="重置本地mzwid为18564018和18563946" />
+
+        <Button
             android:id="@+id/loginbtn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -21,7 +42,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
-            android:text="@string/subgameinfo" />
+            android:text="@string/subgameinfo"
+            android:visibility="gone" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -51,7 +73,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
-            android:text="@string/stapay" />
+            android:text="@string/stapay"
+            android:visibility="gone" />
 
         <Button
             android:id="@+id/logoutbtn"

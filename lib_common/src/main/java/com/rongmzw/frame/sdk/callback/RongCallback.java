@@ -10,9 +10,13 @@ public interface RongCallback {
     int TYPE_PAY = 0x03;
     int TYPE_STAPAY = 0x04;
     int TYPE_EXITGAME = 0x05;
-    int SUCCESS = 0x01;
-    int FAILED = 0x00;
-    int LOGOUT = 0x06;
+
+    int CODE_SUCCESS = 0x01;
+    int CODE_FAILED = 0x00;
+    int CODE_LOGIN_CANCEL = 4;
+    int CODE_LOGIN_LOGOUT = 6;
+    int CODE_PAY_PREPARE = -1;
+    int CODE_PAY_FINISHED = 5;
 
     void onResult(int type, int code, String result);
 }

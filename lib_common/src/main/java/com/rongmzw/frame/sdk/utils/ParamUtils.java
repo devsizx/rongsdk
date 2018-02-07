@@ -5,6 +5,7 @@ import android.os.Build;
 
 import com.muzhiwan.sdk.common.utils.MzwSDKManagerUtils;
 import com.rongmzw.frame.sdk.constants.HttpConstants;
+import com.rongmzw.frame.sdk.constants.RongConstants;
 
 import java.util.HashMap;
 import java.util.Locale;
@@ -22,6 +23,7 @@ public class ParamUtils {
         params.put(HttpConstants.PARAMS_KEY_IMEI, OSInfoManagerUtils.getIMEI(context));
         params.put(HttpConstants.PARAMS_KEY_MAC, OSInfoManagerUtils.getMacAddress(context));
         params.put(HttpConstants.PARAMS_KEY_SYSTEMVERSION, String.valueOf(Build.VERSION.SDK_INT));
+        params.put(HttpConstants.PARAMS_KEY_MULTIVERSION, String.valueOf(RongConstants.MULTIVERSION));
         params.put(HttpConstants.PARAMS_KEY_CPU, OSInfoManagerUtils.getCpuType(context));
         params.put(HttpConstants.PARAMS_KEY_COUNTRY, Locale.getDefault().getCountry());
         params.put(HttpConstants.PARAMS_KEY_DENSITY, String.valueOf(OSInfoManagerUtils.getScreenDpi(context)));

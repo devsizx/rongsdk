@@ -6,7 +6,7 @@ package com.rongmzw.frame.sdk.domain.http;
 
 public class LoginResponse {
     /**
-     * data : {"token":"5d41402abc4b2a76b9719d911017c592","mzwid":"8832975","bind":0}
+     * data : {"token":"5d41402abc4b2a76b9719d911017c592","mzwid":"8832975","bindstate":0}
      * err_no : 200
      * err_msg :
      * time : 1515396341
@@ -53,10 +53,12 @@ public class LoginResponse {
         /**
          * token : 5d41402abc4b2a76b9719d911017c592
          * mzwid : 8832975
+         * bindstate:0
          */
 
         private String token;
         private String mzwid;
+        private int bindstate;
 
         public String getToken() {
             return token;
@@ -72,6 +74,14 @@ public class LoginResponse {
 
         public void setMzwid(String mzwid) {
             this.mzwid = mzwid;
+        }
+
+        public int getBindstate() {
+            return bindstate;
+        }
+
+        public void setBindstate(int bindstate) {
+            this.bindstate = bindstate;
         }
     }
 }

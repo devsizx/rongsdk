@@ -11,21 +11,17 @@ import com.muzhiwan.sdk.core.callback.MzwPayCallback;
 import com.muzhiwan.sdk.core.callback.MzwStaPayCallback;
 import com.muzhiwan.sdk.service.MzwOrder;
 import com.rongmzw.frame.sdk.callback.RongCallback;
-import com.rongmzw.frame.sdk.domain.http.InitResponse;
 import com.rongmzw.frame.sdk.domain.local.RongGameInfo;
 import com.rongmzw.frame.sdk.domain.local.RongOrder;
-import com.rongmzw.frame.sdk.impl.RongSdkRequest;
 
 /**
  * Created by Administrator on 2017/12/13.
  */
 
-public class RongSdkController extends RongSdkRequest implements RongSdkApi {
+public class RongSdkController implements RongSdkApi {
     private static String TAG = RongSdkController.class.getSimpleName();
     private MzwSdkController mzwSdkController = MzwSdkController.getInstance();
-    private Activity gameActivity;
     private RongCallback rongCallback;
-    private InitResponse initResponse = null;
     /**
      * 游戏屏幕方向设置，由厂商传入，ORIENTATION_HORIZONTAL代表横屏，ORIENTATION_VERTICAL代表竖屏
      **/
@@ -54,7 +50,6 @@ public class RongSdkController extends RongSdkRequest implements RongSdkApi {
     @Override
     public void callInit(final Activity gameActivity, final int screenOrientation, final RongCallback rongCallback) {
         Log.e(TAG, "mzw callInit......");
-        this.gameActivity = gameActivity;
         this.rongCallback = rongCallback;
         mzwSdkController.init(gameActivity, screenOrientation, new MzwInitCallback() {
             @Override
@@ -149,11 +144,5 @@ public class RongSdkController extends RongSdkRequest implements RongSdkApi {
     public void callExitGame() {
         Log.e(TAG, "mzw callExitGame......");
         rongCallback.onResult(RongCallback.TYPE_EXITGAME, 1, "exitGame success......");
-//        mzwSdkController.exitGame(new MzwExitGameCallBack() {
-//            @Override
-//            public void onResult(int i, String s) {
-//                rongMzwExitGameCallback.onResult(i, s);
-//            }
-//        });
     }
 }

@@ -11,6 +11,8 @@ import com.rongmzw.frame.sdk.domain.http.LoginResponse;
 import com.rongmzw.frame.sdk.domain.http.PayResponse;
 import com.rongmzw.frame.sdk.utils.HttpUtils;
 
+import java.util.Map;
+
 /**
  * Created by different_loyal on 2018/1/3.
  */
@@ -22,6 +24,10 @@ public class RongSdkRequest implements RongSdkRequestApi {
     protected InitResponse initResponse = null;
     protected LoginResponse loginResponse = null;
     protected PayResponse payResponse = null;
+    protected InitResponse.DataBean initResponseDataBean = null;
+    protected LoginResponse.DataBean loginResponseDataBean = null;
+    protected PayResponse.DataBean payResponseDataBean = null;
+    protected InitResponse.DataBean.ParamsBean initResponseDataParamsBean = null;
     /**
      * 游戏屏幕方向设置，由厂商传入，ORIENTATION_HORIZONTAL代表横屏，ORIENTATION_VERTICAL代表竖屏
      **/
@@ -32,17 +38,17 @@ public class RongSdkRequest implements RongSdkRequestApi {
     public static final int ORIENTATION_VERTICAL = 1;
 
     @Override
-    public void initRequest(Activity activity, RongHttpCallback initHttpCallback) {
-        HttpUtils.initRequest(activity, initHttpCallback);
+    public void initRequest(Activity activity, Map<String, String> params, RongHttpCallback initHttpCallback) {
+        HttpUtils.initRequest(activity, params, initHttpCallback);
     }
 
     @Override
-    public void loginRequest(Activity activity, String userInfo, RongHttpCallback loginHttpCallback) {
-        HttpUtils.loginRequest(activity, userInfo, loginHttpCallback);
+    public void loginRequest(Activity activity, Map<String, String> params, RongHttpCallback loginHttpCallback) {
+        HttpUtils.loginRequest(activity, params, loginHttpCallback);
     }
 
     @Override
-    public void payRequest(Activity activity, String orderInfo, RongHttpCallback payHttpCallback) {
-        HttpUtils.payRequest(activity, orderInfo, payHttpCallback);
+    public void payRequest(Activity activity, Map<String, String> params, RongHttpCallback payHttpCallback) {
+        HttpUtils.payRequest(activity, params, payHttpCallback);
     }
 }

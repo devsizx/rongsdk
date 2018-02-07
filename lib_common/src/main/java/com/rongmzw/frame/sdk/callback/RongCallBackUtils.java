@@ -22,11 +22,11 @@ public class RongCallBackUtils {
     }
 
     public static void initSuccessCallBack(String msg) {
-        initCallBack(RongCallback.SUCCESS, msg);
+        initCallBack(RongCallback.CODE_SUCCESS, msg);
     }
 
     public static void initFailedCallBack(String msg) {
-        initCallBack(RongCallback.FAILED, msg);
+        initCallBack(RongCallback.CODE_FAILED, msg);
     }
 
     public static void loginCallBack(int callBackCode, String msg) {
@@ -34,15 +34,15 @@ public class RongCallBackUtils {
     }
 
     public static void loginSuccessCallBack(String msg) {
-        loginCallBack(RongCallback.SUCCESS, msg);
+        loginCallBack(RongCallback.CODE_SUCCESS, msg);
     }
 
     public static void loginFailedCallBack(String msg) {
-        loginCallBack(RongCallback.FAILED, msg);
+        loginCallBack(RongCallback.CODE_FAILED, msg);
     }
 
     public static void logoutCallBack() {
-        loginCallBack(RongCallback.LOGOUT, "logout ...");
+        loginCallBack(RongCallback.CODE_LOGIN_LOGOUT, "logout ...");
     }
 
     public static void payCallBack(int callBackCode, String orderInfo) {
@@ -50,11 +50,11 @@ public class RongCallBackUtils {
     }
 
     public static void paySuccessCallBack(String orderInfo) {
-        payCallBack(RongCallback.SUCCESS, orderInfo);
+        payCallBack(RongCallback.CODE_SUCCESS, orderInfo);
     }
 
     public static void payFailedCallBack(String orderInfo) {
-        payCallBack(RongCallback.FAILED, orderInfo);
+        payCallBack(RongCallback.CODE_FAILED, orderInfo);
     }
 
     public static void exitGameCallBack(int callBackCode, String msg) {
@@ -62,11 +62,11 @@ public class RongCallBackUtils {
     }
 
     public static void exitGameSuccessCallBack(String msg) {
-        exitGameCallBack(RongCallback.SUCCESS, msg);
+        exitGameCallBack(RongCallback.CODE_SUCCESS, msg);
     }
 
     public static void exitGameFailedCallBack(String msg) {
-        exitGameCallBack(RongCallback.FAILED, msg);
+        exitGameCallBack(RongCallback.CODE_FAILED, msg);
     }
 
     private void initCallback(int callBackCode, String msg) {

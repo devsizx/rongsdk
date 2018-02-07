@@ -55,6 +55,7 @@ public class InitResponse {
         /**
          * switch : 0
          * apilevel : 0
+         * bindstate : 0
          * bindurl : http://sdk.muzhiwan.com/pay/V1/move/?id=6268bc958aac428dfc6e93216708354f&key=6b70c8a75142e26ea8192ac9939a57cb
          * params : {"appkey":"1378375366Az26xatNyDOD5EM6D2ys","secret":"ug2KMdLi2JSr4naOE48XmL3h"}
          */
@@ -62,6 +63,7 @@ public class InitResponse {
         @SerializedName("switch")
         private int switchX;
         private int apilevel;
+        private int bindstate;
         private String bindurl;
         private ParamsBean params;
 
@@ -79,6 +81,14 @@ public class InitResponse {
 
         public void setApilevel(int apilevel) {
             this.apilevel = apilevel;
+        }
+
+        public int getBindstate() {
+            return bindstate;
+        }
+
+        public void setBindstate(int bindstate) {
+            this.bindstate = bindstate;
         }
 
         public String getBindurl() {

@@ -5,8 +5,8 @@ package com.rongmzw.frame.sdk.constants;
  */
 
 public class HttpConstants {
-    public static final String BIND_URL_DEF = "http://sdk.muzhiwan.com/pay/V1/move/?id=7491782056e2a8c0a8150dda9f885bf9&key=d612b493dcd48e7bcf7d893456f2e5c9";
     public static final String BASE_URL = "http://multi.sdk.muzhiwan.com/index.php";
+    public static final String INIT_URL = "http://multi.sdk.muzhiwan.com/init.html";
     public static final String PARAMS_KEY_TYPE = "type";
     public static final String PARAMS_VALUE_INIT = "init";
     public static final String PARAMS_VALUE_LOGIN = "login";
@@ -18,6 +18,8 @@ public class HttpConstants {
     public static final String PARAMS_KEY_IMEI = "imei";
     public static final String PARAMS_KEY_MAC = "mac";
     public static final String PARAMS_KEY_SYSTEMVERSION = "systemversion";
+    public static final String PARAMS_KEY_MULTIVERSION = "multiversion";
+    public static final String PARAMS_KEY_CHANNELVERSION = "channelversion";
     public static final String PARAMS_KEY_CPU = "cpu";
     public static final String PARAMS_KEY_COUNTRY = "country";
     public static final String PARAMS_KEY_DENSITY = "density";
@@ -30,4 +32,7 @@ public class HttpConstants {
     public static final String PARAMS_KEY_ORDERINFO = "orderinfo";
     public static final String PARAMS_KEY_APPKEY = "appkey";
     public static final String PARAMS_KEY_UID = "uid";
+    public static final String PARAMS_KEY_PARAMS = "params";
+    public static final String PARAMS_KEY_MZWID = "mzwid";
+    public static final String PARAMS_KEY_KEY = "key";
 }

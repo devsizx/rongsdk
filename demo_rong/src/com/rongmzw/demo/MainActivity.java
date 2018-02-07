@@ -5,6 +5,7 @@ import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
@@ -20,8 +21,10 @@ import android.widget.Toast;
 
 import com.rongmzw.frame.sdk.api.RongSdkController;
 import com.rongmzw.frame.sdk.callback.RongCallback;
+import com.rongmzw.frame.sdk.constants.RongConstants;
 import com.rongmzw.frame.sdk.domain.local.RongGameInfo;
 import com.rongmzw.frame.sdk.domain.local.RongOrder;
+import com.rongmzw.frame.sdk.utils.LocalSpfManagerUtils;
 import com.zhy.http.okhttp.OkHttpUtils;
 import com.zhy.http.okhttp.callback.StringCallback;
 
@@ -30,7 +33,7 @@ import okhttp3.Call;
 public class MainActivity extends Activity implements View.OnClickListener {
     private static String TAG = MainActivity.class.getName();
     private EditText pay_edit;
-    private Button loginbtn, logoutbtn, paybtn, stapaybtn, subgameinfobtn, exitgamebtn;
+    private Button resetbtn01, resetbtn02, resetbtn03, loginbtn, logoutbtn, paybtn, stapaybtn, subgameinfobtn, exitgamebtn;
     private RongOrder order;
     private boolean isInit = false;
     private boolean isLogin = false;
@@ -105,8 +108,14 @@ public class MainActivity extends Activity implements View.OnClickListener {
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
         this.requestWindowFeature(Window.FEATURE_NO_TITLE);
         super.onCreate(savedInstanceState);
-
+        /**
+         * 设置屏幕方向
+         */
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_SENSOR_LANDSCAPE);
         setContentView(R.layout.activity_main);
+        resetbtn01 = (Button) findViewById(R.id.reset_18564018);
+        resetbtn02 = (Button) findViewById(R.id.reset_18563946);
+        resetbtn03 = (Button) findViewById(R.id.reset_18564018and18563946);
         loginbtn = (Button) findViewById(R.id.loginbtn);
         logoutbtn = (Button) findViewById(R.id.logoutbtn);
         pay_edit = (EditText) findViewById(R.id.payedit);
@@ -114,6 +123,9 @@ public class MainActivity extends Activity implements View.OnClickListener {
         stapaybtn = (Button) findViewById(R.id.stapaybtn);
         subgameinfobtn = (Button) findViewById(R.id.subgameinfobtn);
         exitgamebtn = (Button) findViewById(R.id.exitgamebtn);
+        resetbtn01.setOnClickListener(this);
+        resetbtn02.setOnClickListener(this);
+        resetbtn03.setOnClickListener(this);
         loginbtn.setOnClickListener(this);
         logoutbtn.setOnClickListener(this);
         paybtn.setOnClickListener(this);
@@ -268,6 +280,19 @@ public class MainActivity extends Activity implements View.OnClickListener {
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
+            case R.id.reset_18563946:
+                LocalSpfManagerUtils.putStringShared(this, RongConstants.RONG_SPF_NAME, RongConstants.RONG_SPF_KEY_MZWIDS, "");
+                LocalSpfManagerUtils.addMzwId(this, "18563946");
+                break;
+            case R.id.reset_18564018:
+                LocalSpfManagerUtils.putStringShared(this, RongConstants.RONG_SPF_NAME, RongConstants.RONG_SPF_KEY_MZWIDS, "");
+                LocalSpfManagerUtils.addMzwId(this, "18564018");
+                break;
+            case R.id.reset_18564018and18563946:
+                LocalSpfManagerUtils.putStringShared(this, RongConstants.RONG_SPF_NAME, RongConstants.RONG_SPF_KEY_MZWIDS, "");
+                LocalSpfManagerUtils.addMzwId(this, "18564018");
+                LocalSpfManagerUtils.addMzwId(this, "18563946");
+                break;
             case R.id.loginbtn:
                 login();
                 break;
